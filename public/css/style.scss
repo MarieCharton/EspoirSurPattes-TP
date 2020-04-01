@@ -1,0 +1,144 @@
+$green : #2cb188;
+$darkgrey : #435259;
+$darkergrey : #24313c;
+$fontheader :'Pacifico', cursive;
+
+
+body{
+    background-color: $darkergrey;
+    font-family: $fontheader;
+}
+
+/* HEADER */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // font-family: $fontheader;
+    color: $green;
+
+    .logo{
+        &:hover{
+            color:white;
+            cursor: pointer;
+        }
+    }
+
+    li{
+        list-style:none;
+        display: inline;
+        padding: 10px;
+        padding-top: 20px;
+    }
+    .nav{
+        font-size: 1.5em;
+    }
+
+}
+/*BANNER*/
+.banner{
+    width:100%;
+    height:500px;
+    background-image: url("../images/banner/homepage.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-color:#f7fbfe;
+    background-size: 1200px;
+    // font-family: $fontheader;
+    color: $darkergrey;
+    border-radius: 20px;
+    opacity:0.8;
+    display: flex;
+    align-items: center;
+    // background-position: center;
+    .empty{
+        width:60% ;
+        background-color: rgb(8, 67, 87);
+    }
+    .bannertext{
+        width:35% ;
+        height: 25%;
+        background-color: $green ;
+        text-align: center;
+        border-radius: 30px;
+        margin-bottom: 5%;
+        h1{
+            font-size: 2em;
+        }
+        .btn{
+            font-size: 1.5em;
+            background-color:$darkergrey;
+            color: #f7fbfe;
+            padding: 15px;
+            border-radius: 20px;
+            text-decoration: none;
+
+            &:hover{
+                color:$darkgrey;
+                background-color:#f7fbfe;
+                border: 2px solid $green ;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/*Interligne Animaux */
+.animals{
+    margin: 20px auto;
+    display: flex;
+    text-align: center;
+    font-size: 2em;
+    color: $green;
+    .line {
+        border: 2px solid $green;
+        margin: auto;
+        width :45%;
+    }
+    .fas{
+        padding:2px;
+    }
+}
+
+/*AboutUS*/
+.about-us{
+    width:100%;
+    height:300px;
+    background-image: url("../images/aboutus/pattes.png");
+    background-repeat: no-repeat;
+    background-position: 0% 80%;
+    background-color:$darkgrey;
+    color: $darkergrey;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    h1{
+        color: $green;
+    }
+    p{
+        color:#f7fbfe;
+        text-align: justify;
+        // margin: 10px 120px;
+        margin-left: 15%;
+        margin-right: 5%;
+
+    }
+}
+
+
+/*AnimalSection*/
+.animal-section{
+    width:100%;
+    height:600px;
+    background-color:$darkgrey;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    h1{
+        color: $green;
+    }
+}
+
+
+

@@ -1,0 +1,150 @@
+body {
+  background-color: #24313c;
+  font-family: "Pacifico", cursive;
+}
+
+/* HEADER */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #2cb188;
+}
+
+.header .logo:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.header li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.header .nav {
+  font-size: 1.5em;
+}
+
+/*BANNER*/
+.banner {
+  width: 100%;
+  height: 500px;
+  background-image: url("../images/banner/homepage.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-color: #f7fbfe;
+  background-size: 1200px;
+  color: #24313c;
+  border-radius: 20px;
+  opacity: 0.8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner .empty {
+  width: 60%;
+  background-color: #084357;
+}
+
+.banner .bannertext {
+  width: 35%;
+  height: 25%;
+  background-color: #2cb188;
+  text-align: center;
+  border-radius: 30px;
+  margin-bottom: 5%;
+}
+
+.banner .bannertext h1 {
+  font-size: 2em;
+}
+
+.banner .bannertext .btn {
+  font-size: 1.5em;
+  background-color: #24313c;
+  color: #f7fbfe;
+  padding: 15px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.banner .bannertext .btn:hover {
+  color: #435259;
+  background-color: #f7fbfe;
+  border: 2px solid #2cb188;
+  cursor: pointer;
+}
+
+/*Interligne Animaux */
+.animals {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-size: 2em;
+  color: #2cb188;
+}
+
+.animals .line {
+  border: 2px solid #2cb188;
+  margin: auto;
+  width: 45%;
+}
+
+.animals .fas {
+  padding: 2px;
+}
+
+/*AboutUS*/
+.about-us {
+  width: 100%;
+  height: 300px;
+  background-image: url("../images/aboutus/pattes.png");
+  background-repeat: no-repeat;
+  background-position: 0% 80%;
+  background-color: #435259;
+  color: #24313c;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.about-us h1 {
+  color: #2cb188;
+}
+
+.about-us p {
+  color: #f7fbfe;
+  text-align: justify;
+  margin-left: 15%;
+  margin-right: 5%;
+}
+
+/*AnimalSection*/
+.animal-section {
+  width: 100%;
+  height: 600px;
+  background-color: #435259;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.animal-section h1 {
+  color: #2cb188;
+}
+/*# sourceMappingURL=style.css.map */
