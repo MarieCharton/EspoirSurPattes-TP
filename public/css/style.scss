@@ -6,11 +6,15 @@ $green : #2cb188;
 $darkgrey : #435259;
 $darkergrey : #24313c;
 $fontheader :'Pacifico', cursive;
+$font: 'Roboto', sans-serif;
 
 
 body{
     background-color: $darkergrey;
-    font-family: $fontheader;
+    font-family: $font;
+}
+a{
+    text-decoration: none;
 }
 
 /* HEADER */
@@ -18,10 +22,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // font-family: $fontheader;
+    font-family: $fontheader;
     color: $green;
 
-    .logo{
+    a{
+        color:$green;
         &:hover{
             color:white;
             cursor: pointer;
@@ -33,22 +38,59 @@ body{
         display: inline;
         padding: 10px;
         padding-top: 20px;
+        a {
+            position: relative;
+            text-decoration: none;
+            color:$green;
+          }
+        a::after {
+        content: '';
+        text-decoration: none;
+        transform-origin: 0 0; 
+        transform: scaleX(0);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px; 
+        background:$green;
+        z-index: -1;
+        opacity: 0.8;
+        transition: transform .3s;
+        }
+        a:hover::after {
+        transform: scaleX(1);
+        }
     }
     .nav{
         font-size: 1.5em;
     }
-
+    .login{
+        font-size: 1.2em;
+        // text-align: right;
+        li{
+            a{
+                color:white;
+            }
+            a::after {
+                background:white;
+            }
+        }
+    }
 }
 /*BANNER*/
 .banner{
     width:100%;
     height:500px;
+    font-family: $fontheader;
     background-image: url("../images/banner/homepage.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0% 100%;
     background-color:#f7fbfe;
-    background-size: 1200px;
+    background-size: 60%;
+    // background-size: 1200px;
+
     color: $darkergrey;
     border-radius: 20px;
     opacity:0.8;
@@ -107,7 +149,8 @@ body{
 .about-us{
     width:100%;
     height:300px;
-    background-image: url("../images/aboutus/pattes.png");
+    padding-top: 1px;
+    background-image: url("../images/aboutus/pattes2.png");
     background-repeat: no-repeat;
     background-position: 0% 80%;
     background-color:$darkgrey;
@@ -116,6 +159,7 @@ body{
     text-align: center;
     font-size: 1.5em;
     h1{
+        font-size :1.5em;
         color: $green;
     }
     p{
@@ -133,11 +177,13 @@ body{
 .animal-section{
     width:100%;
     height:600px;
+    padding-top: 1px;
     background-color:$darkgrey;
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
     h1{
+        font-size :1.5em;
         color: $green;
     }
 }
@@ -145,124 +191,233 @@ body{
 /*ArticleSection*/
 .article-section{
     width:100%;
-    height:700px;
+    height: 600px;
+    padding-top: 1px;
     background-color:$darkgrey;
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
     h1{
+        font-size :1.5em;
         color: $green;
     }
 }
 
-.essai{
+/*Footer*/
 
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  html,
-  css {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .position {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    margin-top: 15%;
-  }
-  
-  #workarea {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #1e1a3e;
-    font-family: Raleway;
-  }
-  
-  #personal {
-    color:white;
-    text-decoration:none;
-    position:absolute;
-    bottom:15px;
-    right:2%;
-  }
-  /*    start code for the actual button:         */
-  
-  
-  /*   
-      Spot is the span on the inside of the href that
-      fills the parent and makes the hover and link work
-      for the entire div
-  */
-  
-  .spot {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  /*
-      This is the outer svg wrapper that the SVG itself will 
-      fill. Multiple svg-wrapper classes can be put side by side.
-  */
-  
-  .svg-wrapper {
-    margin-top: 0;
-    position: relative;
-    width: 150px;
-    /*make sure to use same height/width as in the html*/
-    height: 40px;
-    display: inline-block;
-    border-radius: 3px;
-    margin-left: 5px;
-    margin-right: 5px
-  }
-  /*
-    This is where we define the fill, color, thickness,
-    and stroke pattern of the SVG when there is no hover.
-    The dasharray and offset together define the line position
-    under the words. Here's also where the transition speed is set.
-  */
-  
-  #shape {
-    stroke-width: 6px;
-    fill: transparent;
-    stroke: #009FFD;
-    stroke-dasharray: 85 400;
-    stroke-dashoffset: -220;
-    transition: 1s all ease;
-  }
-  /* 
-      Pushing the text up into the SVG. Without this the
-      text would be below the div's.
-  */
-  
-  #text {
-    margin-top: -35px;
-    text-align: center;
-  }
-  
-  #text a {
-    color: white;
-    text-decoration: none;
-    font-weight: 100;
-    font-size: 1.1em;
-  }
-  /* 
-      Changing the shape on hover. I change the color of the stroke,
-  make it thinner, then set it to again wrap around the entire parent element.
-  */
-  
-  .svg-wrapper:hover #shape {
-    stroke-dasharray: 50 0;
-    stroke-width: 3px;
-    stroke-dashoffset: 0;
-    stroke: #06D6A0;
-  }
+.footer{
+    background-color: $green;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    h1{
+        color: $darkergrey;
+        font-size: 1.5em;
+    }
+    li{
+        list-style:none;
+    }
+    a{
+        text-decoration: none;
+        color:$darkergrey;
+        &:hover{
+            color:white;
+        }
+    }
+    .trait {
+        border: 2px solid $darkergrey;
+        margin: 0px auto;
+        width :45%;
+    }
+
+    .social{
+       li{
+           display: inline;
+       }
+       .fab{
+           font-size: 3em;
+       }
+    }
+    form {
+        padding-top: 10px;
+        }
 }
+.credits{
+    text-align: center;
+    color :$green;
+    span{
+        color:red;
+    }
+}
+  
+@media (max-width:767px){
+
+    /* HEADER */
+    .header{
+        width:100%;
+        text-align: center;
+        display: inline;
+        position:fixed;
+        background: $darkergrey;
+        z-index: 1;
+    
+        .logo{
+            font-size: 1.8em;
+            margin: 0px;
+        }
+        button{
+            font-size: 0.8em;
+            margin-left:30px;
+            border-radius: 5px;
+            background-color:$green;
+            color:#000;
+            cursor: pointer;
+        }
+    
+    #responsive-nav{
+        display: none;
+        font-size: 0.8em;
+    }
+    
+        
+    }
+
+    /*BANNER*/
+    .banner{
+        height:480px;
+        background-size: 500px;
+        align-items: column;
+        justify-content: center;
+        .empty{
+            display: none;
+        }
+        .bannertext{
+            //    display: none;
+            width:75% ;
+            height: 15%;
+            font-size: 10px;
+            border-radius: 20px;
+            padding-bottom: 25px;
+        }
+    }
+
+    /*AboutUS*/
+    .about-us{
+        height:30%;
+        padding-top: 1px;
+        background-position: -12% 60%;
+        background-size: 150px;
+        font-size: 1.2em;
+        h1{
+            font-size :1.8em;
+            margin-left: 15%;
+            margin-right: 5%;
+        }
+        p{    
+            margin-left: 25%;
+            padding-bottom: 20px;
+        }
+    }
+
+    /*AnimalSection*/
+    .animal-section{
+        height:30%;
+        font-size: 1.2em;
+    }
+    /*ArticleSection*/
+    .article-section{
+        height:20%;
+        font-size: 1.2em;
+    }
+    
+    /*Footer*/
+
+    .footer{
+        text-align: center;
+        h1{
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .trait {
+        display: none;
+        }
+
+        .social{
+        .fab{
+            font-size: 3em;
+        }
+        }
+        .newsletter{
+            display: none;
+        }
+    }
+  
+}
+
+
+
+@media (min-width:768px)and (max-width:1280px){
+    header{
+        button{
+            display: none;
+        }
+    }
+    .banner{
+
+        height:400px;
+        background-size: 80%;
+        .bannertext{
+            font-size: 10px;
+            padding-bottom: 25px;
+        }
+    }
+
+    /*AboutUS*/
+    .about-us{
+        background-position: 0% 60%;
+        background-size: 180px;
+        font-size: 1.2em;
+        p{    
+            margin-left: 25%;
+            padding-bottom: 20px;
+        }
+    }
+
+    /*AnimalSection*/
+    .animal-section{
+        height:400px;
+        font-size: 1.2em;
+    }
+
+    /*ArticleSection*/
+    .article-section{
+        height:480px;
+        font-size: 1.2em;
+    }
+
+}
+@media (min-width:1280px){
+    header{
+        button{
+            display: none;
+        }
+        
+    }
+
+}
+
+// viewports
+// Desktop
+// 1600x992px scaled down to scale(0.3181)
+// Laptop
+// 1280x802px scaled down to scale(0.277)
+// Tablet
+// 768x1024px scaled down to scale(0.219)
+// Mobile
+// 320x480px scaled down to scale(0.219)
+// IPHONE 10 375 x 812
+
+
+
 

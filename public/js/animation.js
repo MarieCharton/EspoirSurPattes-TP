@@ -1,3 +1,5 @@
+/*Diaporama Fonction */ 
+
 $('.slider').each(function() {
   var $this = $(this);
   var $group = $this.find('.slide_group');
@@ -87,3 +89,31 @@ $('.slider').each(function() {
   
   advance();
 });
+
+
+/*Fonction responsive Header */
+var headerMenu = document.querySelector("#responsive-nav");
+
+window.addEventListener("click",showMenu);
+
+function showMenu(){
+
+  if (window.matchMedia("(max-width: 780px)").matches) {
+
+
+    if(headerMenu.classList.contains("closeMenu")) {
+      headerMenu.classList.remove("closeMenu");
+      headerMenu.classList.add("openMenu");
+      headerMenu.style.display = "inline"
+      console.log("menu ouvert ok");
+      }
+
+
+    else if(headerMenu.classList.contains("openMenu")) {
+      headerMenu.classList.remove("openMenu");
+      headerMenu.classList.add("closeMenu");
+      headerMenu.style.display = "none"
+      console.log("menu fermé ok");
+      }
+  }
+}

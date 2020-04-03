@@ -7,25 +7,31 @@
     <title>Accueil</title>
     <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <header>
     <div class="header">
-        <h1 class="logo"><i class="fas fa-home"></i> Espoir sur Pattes <i class="fas fa-paw"></i></h1>
-        <div class="nav links">
-            <nav>
-                <li>Carte</li>
-                <li>Blog</li>
-                <li>Contact</li>
-            </nav>
-        </div>
-        <div class="nav login">
-            <nav>
-                <li>Connexion</li>
-                <li>Inscription</li>
-            </nav>
+        <h1 class="logo"><a href=""><i class="fas fa-home"></i> Espoir sur Pattes <i class="fas fa-paw"></i></a><button><i class="fas fa-bars"></i></button></h1>
+        <!-- <h1 class="logo"><i class="fas fa-home"></i> Espoir sur Pattes <i class="fas fa-paw"></i> <button><i class="fas fa-bars"></i></button></h1> -->
+        <div id="responsive-nav" class="closeMenu">
+            <div class="nav links">
+                <nav>
+                    <li><a href="">Carte</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Associations</a></li>
+                </nav>
+            </div>
+            <div class="nav login">
+                <nav>
+                    <li><a href="https://example.com">Connexion</a></li>
+                    <li><a href="mailto:m.bluth@example.com">Inscription</a></li>
+                </nav>
+            </div>
         </div>
     </div>
+
 </header>
 
 <body>
@@ -78,97 +84,29 @@
         <!-- End Interline Animals -->
 
         <!-- start Animal Section -->
-        <div class="article-section">
-            <h1>Les derniers animaux signalés</h1>
-            <div class="diaporama">
-                <div class="slider">
-                    <div class="slide_viewer">
-                        <div class="slide_group">
-                            <div class="slide">
-                                <div class="polaroids">
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>Chien perdu a Dijon (Bourgogne)</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="polaroids">
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>Chien perdu a Dijon (Bourgogne)</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="polaroids">
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>Chien perdu a Dijon (Bourgogne)</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="polaroids">
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>Chien perdu a Dijon (Bourgogne)</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="slide_buttons"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End slider -->
+        <div class="animal-section">
+            <h1> <i class="fas fa-bell"></i> Les derniers animaux signalés</h1>
+            <div class="polaroids mini">
+                <a href="link" title="Népal">
+                    <img src="../images/nepal.jpg" alt="Népal" />
+                    <p>Chien perdu a Dijon (Bourgogne)</p>
+                </a>
+                <a href="link" title="Népal">
+                    <img src="../images/nepal.jpg" alt="Népal" />
+                    <p>coucou</p>
+                </a>
+                <a href="link" title="Népal">
+                    <img src="../images/LogoRond.png" alt="Népal" />
+                    <p>coucou</p>
+                </a>
+                <a href="link" title="Népal">
+                    <img src="../images/nepal.jpg" alt="Népal" />
+                    <p>Chien perdu a Dijon (Bourgogne)</p>
+                </a>
 
-                <div class="directional_nav">
-                    <div class="flexbutton">
-                        <div class="previous_btn" title="Previous">
-                            <i id="previous" class="fas fa-arrow-circle-left fa-3x"></i>
-                        </div>
-                        <div class="next_btn" title="Next">
-                            <i class="fas fa-arrow-circle-right fa-3x"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- End directional_nav -->
             </div>
         </div>
         <!-- End Animal Section -->
-
 
 
         <!-- Start Interline Animals -->
@@ -188,7 +126,7 @@
 
         <!-- Start Article Section -->
         <div class="article-section">
-            <h1>Les derniers articles du blog</h1>
+            <h1> <i class="fas fa-pen"></i> Les dernières actualités du blog </h1>
             <div class="diaporama">
                 <div class="slider">
                     <div class="slide_viewer">
@@ -197,6 +135,34 @@
                                 <div class="polaroids">
                                     <a href="link" title="Népal">
                                         <img src="../images/nepal.jpg" alt="Népal" />
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="polaroids">
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
                                         <p>Chien perdu a Dijon (Bourgogne)</p>
                                     </a>
                                     <a href="link" title="Népal">
@@ -205,7 +171,35 @@
                                     </a>
                                     <a href="link" title="Népal">
                                         <img src="../images/nepal.jpg" alt="Népal" />
+                                        <p>Chien perdu a Dijon (Bourgogne)</p>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="polaroids">
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <p>Chien perdu a Dijon (Bourgogne)</p>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
                                         <p>coucou</p>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <p>Chien perdu a Dijon (Bourgogne)</p>
+                                    </a>
+                                    <a href="link" title="Népal">
+                                        <img src="../images/nepal.jpg" alt="Népal" />
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
                                     </a>
                                 </div>
                             </div>
@@ -223,37 +217,11 @@
                                         <img src="../images/nepal.jpg" alt="Népal" />
                                         <p>coucou</p>
                                     </a>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="polaroids">
                                     <a href="link" title="Népal">
                                         <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>Chien perdu a Dijon (Bourgogne)</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="polaroids">
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>Chien perdu a Dijon (Bourgogne)</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
-                                    </a>
-                                    <a href="link" title="Népal">
-                                        <img src="../images/nepal.jpg" alt="Népal" />
-                                        <p>coucou</p>
+                                        <h2>Article 1</h2>
+                                        <p>Ecrit par toto le 2/04/2020</p>
+                                        <button>En savoir plus</button>
                                     </a>
                                 </div>
                             </div>
@@ -278,47 +246,55 @@
         </div>
         <!-- End Article Section -->
 
-
-
-        <div class="essai">
-            <div id="workarea">
-                <div class="position">
-              
-                  <!--start button, nothing above this is necessary -->
-                  <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                      <rect id="shape" height="40" width="150" />
-                      <div id="text">
-                        <a href=""><span class="spot"></span>Carte</a>
-                      </div>
-                    </svg>
-                  </div>
-                  <!--Next button -->
-                  <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                      <rect id="shape" height="40" width="150" />
-                      <div id="text">
-                        <a href=""><span class="spot"></span>Blog</a>
-                      </div>
-                    </svg>
-                  </div>
-                  <!--Next button -->
-                  <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                      <rect id="shape" height="40" width="150" />
-                      <div id="text">
-                        <a href=""><span class="spot"></span>Contact</a>
-                      </div>
-                    </svg>
-                  </div>
-                  <!--End button -->
+        <!-- Start Interline Animals -->
+        <div class="animals">
+            <p>
+                <div class="line"></div>
+                <i class="fas fa-cat"></i>
+                <i class="fas fa-crow"></i>
+                <i class="fas fa-dog"></i>
+                <div class="line"></div>
+            </p>
         </div>
-
-
+        <!-- End Interline Animals -->
     </main>
 
 </body>
 <footer>
+    <div class="footer">
+        <div class="quick-links">
+            <h1>Liens rapides</h1>
+            <div class="trait"></div>
+            <ul>
+                <li><a href="">Carte</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Associations</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h1>Nous contacter</h1>
+            <div class="trait"></div>
+            <p><a href="mailto:espoirsurpattes@gmail.com">espoirsurpattes@gmail.com</a></p>
+            <div class="social">
+                <ul>
+                    <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h1>Newsletter</h1>
+            <div class="trait"></div>
+            <form>
+                <input type="text" id="mail" name="mail" placeholder="Adresse mail"><i class="fas fa-arrow-alt-circle-right"></i>
+            </form>
+        </div>
+    </div>
+    <div class="credits">
+       <p>Made with <span> &#9829;</span> by MC © EspoirSurPattes Theme</p>
+    </div>
 
 </footer>
 
