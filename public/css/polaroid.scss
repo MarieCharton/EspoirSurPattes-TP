@@ -1,3 +1,7 @@
+$green : #2cb188;
+$darkgrey : #435259;
+$darkergrey : #24313c;
+
 .polaroids {
 
   img {
@@ -10,9 +14,9 @@
     text-decoration: none;
     font-size: 1em;
     padding: 10px 10px 25px 10px;
-    margin: 0 0 27px 30px;
-    width: 16%;
-    color: #8B8B8B;
+    // margin: 0 0 27px 30px;
+    width: 60%;
+    color: $darkergrey ;
     border-radius: 10px;
 
   }
@@ -31,7 +35,8 @@
     border-radius: 10px;
   }
 }
-@media (max-width:768px){
+
+@media (max-width:767px){
 
   .mini{
     a {
@@ -42,17 +47,13 @@
   }
   .polaroids {
       a {
-      // background: white;
-      // display: inline-block;
-      // text-decoration: none;
-      // font-size: 1em;
       padding: 5px 5px 15px 5px;
-      margin:12px 12px;
-      width: 40%;
-      // color: #8B8B8B;
-      // border-radius: 10px;
-  
+      // margin:12px 12px;
+      width: 60%;
     }
   }
 }
 
+@media (min-width:768px)and (max-width:1280px){
+
+}
