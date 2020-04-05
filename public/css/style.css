@@ -331,6 +331,71 @@ a {
   color: red;
 }
 
+/*FORMULAIRES*/
+.form-animal {
+  background-color: #2cb188;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-animal .form-header {
+  color: white;
+  background-color: #435259;
+  border: 3px solid white;
+  border-radius: 20px;
+}
+
+.form-animal #animal_type, .form-animal #animal_department {
+  background-color: #2cb188;
+  margin-top: 10px;
+  color: white;
+  width: 25%;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.form-animal input {
+  background-color: #2cb188;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.form-animal input#animal_city {
+  height: 25px;
+  width: 50%;
+}
+
+.form-animal textarea {
+  background-color: #2cb188;
+  border: 3px solid white;
+  height: 200px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.form-animal .low-page {
+  background-color: blue;
+}
+
+.form-animal .low-page .column {
+  background-color: red;
+  width: 60%;
+  margin: 0 auto;
+}
+
 /******MOBILE******/
 @media (max-width: 767px) {
   /* HEADER */

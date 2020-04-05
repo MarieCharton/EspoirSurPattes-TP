@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -23,9 +24,9 @@ class User
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
-    private $role;
+    private $roles = [];
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -94,17 +95,7 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
 
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
 
     public function getPassword(): ?string
     {
@@ -222,6 +213,49 @@ class User
     public function setComments($comments)
     {
         $this->comments = $comments;
+
+        return $this;
+    }
+
+    //! USER INTERFACE NEED
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    
+    public function getRoles()
+    {
+        // on recupère les roles qui sont en BDD
+        $roles = $this->roles;
+
+        // on y ajoute le role "standard" d'un utilisateur connecté 'ROLE_USER'
+        $roles[] = 'ROLE_USER';
+
+        // on renvoi l'ensemble a celui qui demande
+        return array_unique($roles);
+    }
+
+    /**
+     * Set the value of roles
+     *
+     * @return  self
+     */ 
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
 
         return $this;
     }

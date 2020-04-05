@@ -24,10 +24,6 @@
   border-radius: 10px;
 }
 
-.access-to-card p {
-  color: red;
-}
-
 @media (max-width: 767px) {
   .mini a {
     padding: 5px 5px 15px 5px;

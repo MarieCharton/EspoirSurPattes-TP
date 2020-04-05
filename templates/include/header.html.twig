@@ -12,10 +12,18 @@
                 </nav>
             </div>
             <div class="nav login">
+                {% if app.user == false %}
                 <nav>
-                    <li><a href="">Connexion</a></li>
-                    <li><a href="">Inscription</a></li>
+                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                    <li><a href="{{ path('create_account') }}">Inscription</a></li>
                 </nav>
+                {% endif %}
+                 {% if app.user %}
+                <nav>
+                    <li><a href="">Bienvenue {{app.user.username|capitalize}}</a></li>
+                    <li><a href="{{ path('app_logout') }}" onclick="return confirm('Confirmez la déconnexion ?')">Déconnexion</a></li>
+                </nav>
+                {% endif %}
             </div>
         </div>
     </div>
