@@ -1,1 +1,56 @@
-{{ form(formUser) }}
+<div class="form">   
+{{ form_start(formUser) }}
+    <div class="form-header">   
+        <h2><i class="far fa-user-circle"></i> Créér un compte</h2>        
+    </div>
+    <div class="form-content">   
+        <p class ="instruction">Renseignements obligatoire *</p>
+   
+        <div>
+            <p><span class ="instruction"> * </span> Pseudonyme :</p>
+            {{ form_errors(formUser.username) }}
+            {{ form_widget(formUser.username, {
+                'attr': {
+                    'placeholder': '2 caractéres minimum',
+                }
+            }) }}
+        </div>
+        <div>
+            <p><span class ="instruction"> * </span> Adresse mail :</p>
+            {{ form_errors(formUser.email) }}
+            {{ form_widget(formUser.email, {
+                'attr': {
+                    'placeholder': 'doit contenir un @ ',
+                }
+            }) }}
+        </div>
+        <div>
+            <p><span class ="instruction"> * </span> Mot de passe</p>
+            {{ form_errors(formUser.plain_password.first) }}
+            {{ form_widget(formUser.plain_password.first, {
+                'attr': {
+                    'placeholder': 'doit contenir minimum 8 caractères ',
+                }
+            }) }}                        
+        </div>
+
+        <p> <span class ="instruction"> * </span>Confirmation mot de passe</p>
+        {{ form_widget(formUser.plain_password.second, {
+                'attr': {
+                    'placeholder': 'doit contenir minimum 8 caractères ',
+                }
+        }) }}
+
+        <div>
+            {{ form_widget(formUser.enregistrer, {
+                'label': 'Enregistrer',
+                'attr': {
+                    'type': 'submit'
+                }
+            }) }}
+        </div>
+         <p>Déja enregistré ? <a class= "connexion" href="{{ path ('app_login') }}">Se connecter ici</a></p>
+    </div>
+    
+{{ form_end(formUser) }}
+</div>

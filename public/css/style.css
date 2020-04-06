@@ -124,6 +124,13 @@ a {
   background: white;
 }
 
+.header .flashmessage {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  color: #dd6336;
+}
+
 /*BANNER*/
 .banner {
   width: 100%;
@@ -332,9 +339,53 @@ a {
 }
 
 /*FORMULAIRES*/
-.form-animal {
+p {
+  font-weight: bold;
+}
+
+.instruction {
+  color: #bd4646;
+}
+
+a.connexion {
+  color: #435259;
+}
+
+a.connexion:hover {
+  color: white;
+}
+
+::-webkit-input-placeholder {
+  color: #435259;
+  font-size: 1.2em;
+  font-style: italic;
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  color: #435259;
+  font-size: 1.2em;
+  font-style: italic;
+  text-align: center;
+}
+
+::-ms-input-placeholder {
+  color: #435259;
+  font-size: 1.2em;
+  font-style: italic;
+  text-align: center;
+}
+
+::placeholder {
+  color: #435259;
+  font-size: 1.2em;
+  font-style: italic;
+  text-align: center;
+}
+
+.form {
   background-color: #2cb188;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -350,14 +401,14 @@ a {
           flex-direction: column;
 }
 
-.form-animal .form-header {
+.form .form-header {
   color: white;
   background-color: #435259;
   border: 3px solid white;
   border-radius: 20px;
 }
 
-.form-animal #animal_type, .form-animal #animal_department {
+.form #animal_type, .form #animal_department {
   background-color: #2cb188;
   margin-top: 10px;
   color: white;
@@ -365,20 +416,43 @@ a {
   border: 2px solid white;
   border-radius: 10px;
   padding: 8px;
+  text-transform: capitalize;
 }
 
-.form-animal input {
+.form input {
   background-color: #2cb188;
   border: 3px solid white;
   border-radius: 10px;
-}
-
-.form-animal input#animal_city {
   height: 25px;
   width: 50%;
+  font-size: 1em;
+  text-align: center;
 }
 
-.form-animal textarea {
+.form div#animal_identification input, .form div#animal_status input, .form div#animal_sex input {
+  height: 15px;
+  width: 20px;
+}
+
+.form button#animal_envoyer, .form button#article_envoyer, .form button#user_enregistrer, .form button#connect {
+  background-color: #24313c;
+  color: white;
+  width: 20%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.form button#animal_envoyer:hover, .form button#article_envoyer:hover, .form button#user_enregistrer:hover, .form button#connect:hover {
+  background-color: #435259;
+}
+
+.form button#user_enregistrer, .form button#connect {
+  margin-top: 20px;
+}
+
+.form textarea, .form .column {
   background-color: #2cb188;
   border: 3px solid white;
   height: 200px;
@@ -386,14 +460,25 @@ a {
   width: 50%;
 }
 
-.form-animal .low-page {
-  background-color: blue;
+.form .column {
+  margin: 0 auto;
+  height: 80px;
+  margin-top: 10px;
 }
 
-.form-animal .low-page .column {
-  background-color: red;
-  width: 60%;
-  margin: 0 auto;
+.form div#article_categories {
+  padding: 25px;
+}
+
+.form div#article_categories input {
+  height: 20px;
+  width: 20px;
+}
+
+.form div#article_categories label {
+  font-size: 20px;
+  text-transform: capitalize;
+  padding-right: 10px;
 }
 
 /******MOBILE******/
@@ -488,10 +573,38 @@ a {
   .footer .newsletter {
     display: none;
   }
+  /*FORMULAIRES*/
+  .form {
+    width: 90%;
+  }
+  .form #animal_type, .form #animal_department {
+    width: 50%;
+  }
+  .form input {
+    height: 35px;
+    width: 80%;
+  }
+  .form div#animal_identification input, .form div#animal_status input, .form div#animal_sex input {
+    height: 15px;
+    width: 20px;
+  }
+  .form button#animal_envoyer, .form button#article_envoyer, .form button#user_enregistrer, .form button#connect {
+    width: 40%;
+  }
+  .form textarea, .form .column {
+    height: 200px;
+    width: 80%;
+  }
+  .form .column {
+    height: 100px;
+  }
 }
 
 /******TABLET*****/
 @media (min-width: 768px) and (max-width: 1280px) {
+  body {
+    background-color: red;
+  }
   header .button {
     display: none;
   }
@@ -523,6 +636,31 @@ a {
   .article-section {
     height: 500px;
     font-size: 1.2em;
+  }
+  /*FORMULAIRES*/
+  .form {
+    width: 80%;
+  }
+  .form #animal_type, .form #animal_department {
+    width: 50%;
+  }
+  .form input {
+    height: 35px;
+    width: 80%;
+  }
+  .form div#animal_identification input, .form div#animal_status input, .form div#animal_sex input {
+    height: 15px;
+    width: 20px;
+  }
+  .form button#animal_envoyer, .form button#article_envoyer, .form button#user_enregistrer, .form button#connect {
+    width: 40%;
+  }
+  .form textarea, .form .column {
+    height: 200px;
+    width: 80%;
+  }
+  .form .column {
+    height: 100px;
   }
 }
 

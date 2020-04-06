@@ -1,17 +1,33 @@
 {# {{ form(formAnimal) }} #}
-<div class="form-animal">   
+<div class="form">   
 {{ form_start(formAnimal) }}
     <div class="form-header">   
         <h2><i class="fas fa-exclamation-triangle"></i> Signaler un animal</h2>        
     </div>
     <div class="form-content">   
-    
+        <p class ="instruction">Renseignements obligatoire *</p>
         <div>
+            <span class ="instruction"> * </span>
             {{ form_widget(formAnimal.type) }}
+        </div>
+        <div class= "column">
+            <p><span class ="instruction"> * </span>Identification :</p>
+            {{ form_widget(formAnimal.identification) }}
+        </div>
+
+        <div class= "column">
+            <p><span class ="instruction"> * </span> Statut :</p>
+            {{ form_widget(formAnimal.status) }}  
+        </div>
+
+        
+        <div class= "column">
+            <p> <span class ="instruction"> * </span> Sexe :</p>
+            {{ form_widget(formAnimal.sex) }}
         </div>
 
         <div>
-            <p>Nom de l'animal</p>
+            <p>Nom de l'animal :</p>
             {{ form_errors(formAnimal.name) }}
             {{ form_widget(formAnimal.name, {
                 'attr': {
@@ -21,7 +37,7 @@
         </div>
 
         <div>
-            <p>Age de l'animal</p>
+            <p>Age de l'animal :</p>
             {{ form_errors(formAnimal.age) }}
             {{ form_widget(formAnimal.age, {
                 'attr': {
@@ -41,7 +57,7 @@
         </div>
 
         <div>
-            <p>Dans quelle ville ?</p>
+            <p><span class ="instruction"> * </span> Dans quelle ville ?</p>
 
             {{ form_errors(formAnimal.city) }}
             {{ form_widget(formAnimal.city) }}
@@ -49,7 +65,7 @@
 
 
         <div>
-        <p>Dans quel département ?</p>
+        <p><span class ="instruction"> * </span> Dans quel département ?</p>
         {{ form_widget(formAnimal.department) }}
         </div>
 
@@ -64,36 +80,15 @@
             {{ form_errors(formAnimal.description) }}
             {{ form_widget(formAnimal.description, {
                 'attr': {
-                    'placeholder': "Essayez d'etre le plus précis possible dans la description de l'animal (Collier, état général, endroit etc...)"
+                    'placeholder': "Essayez d'être le plus précis possible dans la description de l'animal (collier ou non, état général, endroit etc...)"
                 }}) }}
         </div>
 
-        <div class = "low-page">
-            <div class= "column">
-                <p>Identification</p>
-                 <div class= "align">
-                        {{ form_widget(formAnimal.identification) }}
-                </div>
-            </div>
 
-            <div class= "column">
-                <p>Statut</p>
-                 <div class= "align">
-                    {{ form_widget(formAnimal.status) }}
-                </div>
-            </div>
-
-            
-            <div class= "column">
-                <p>Sexe</p>
-                <div class= "align">
-                    {{ form_widget(formAnimal.sex) }}
-                </div>
-            </div>
-        </div>
+     
         <div>
-            {{ form_widget(formAnimal.Enregistrer, {
-                'label': 'Enregistrer',
+            {{ form_widget(formAnimal.envoyer, {
+                'label': 'Envoyer',
                 'attr': {
                     'type': 'submit'
                 }

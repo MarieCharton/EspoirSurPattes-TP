@@ -1,0 +1,42 @@
+<div class="form">
+	<form method="post">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+		{% if app.user %}
+			<div>
+				Vous etes connecté en tant que
+				{{ app.user.username }},
+				<a href="{{ path('app_logout') }}">Deconnexion</a>
+			</div>
+		{% endif %}
+		{% if app.user == false%}
+			<div class="form-header">
+				<h2>
+					<i class="fas fa-sign-in-alt"></i>
+					Se connecter</h2>
+			</div>
+
+			<p class="info-form m-0 mt-4 p-0">Email</p>
+			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control select-rows" required autofocus>
+
+
+			<p class="info-form m-0 p-0">Mot de passe</p>
+			<input type="password" name="password" id="inputPassword" required>
+			
+			{# <p><small><a href="">Mot de passe oublié ?</a></small></p> #}
+				
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+			<div>
+				<button type="submit" id="connect">
+					Se connecter
+				</button>
+			</div>
+			<p>Pas encore membre ?
+				<a class="connexion" href="{{ path('create_account') }}">Inscrivez-vous ici</a>
+			</p>
+	
+	{% endif %}
+	</form>
+</div>

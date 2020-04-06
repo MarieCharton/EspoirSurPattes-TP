@@ -32,7 +32,7 @@ class UserType extends AbstractType
                   'first_options'  => ['label' => 'Mot de passe'],
                   'second_options' => ['label' => 'Confirmation Mot de Passe'],
             ])
-            ->add('Enregistrer', SubmitType::class)
+            ->add('enregistrer', SubmitType::class)
         ;
     }
 

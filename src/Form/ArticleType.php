@@ -32,7 +32,7 @@ class ArticleType extends AbstractType
                 'multiple' => true,
                 "expanded"=> true,
             ])
-            ->add('Enregistrer', SubmitType::class);
+            ->add('envoyer', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

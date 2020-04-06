@@ -36,6 +36,7 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {
+        $this->addFlash('success', 'Vous avez bien été deconnecté.');
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
@@ -69,6 +70,7 @@ class SecurityController extends AbstractController
             $manager->persist($newUser);
             $manager->flush();
             
+            $this->addFlash('success', 'Votre compte à bien été enregistré.');
             return $this->redirectToRoute('app_login');
         }
 

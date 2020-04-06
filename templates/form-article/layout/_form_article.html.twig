@@ -1,1 +1,55 @@
-{{ form(formArticle) }}
+<div class="form">   
+{{ form_start(formArticle) }}
+    <div class="form-header">   
+        <h2><i class="fas fa-edit"></i> Publier un article</h2>        
+    </div>
+    <div class="form-content">   
+        <p class ="instruction">Renseignements obligatoire *</p>
+   
+    
+        <div>
+            <p><span class ="instruction"> * </span> Titre de l'article :</p>
+            {{ form_errors(formArticle.title) }}
+            {{ form_widget(formArticle.title, {
+                'attr': {
+                    'placeholder': '2 caractéres minimum',
+                }
+            }) }}
+        </div>
+
+        <div class="description">
+            <p><span class ="instruction"> * </span> Contenu de l'article : </p>
+            {{ form_errors(formArticle.content) }}
+            {{ form_widget(formArticle.content, {
+                'attr': {
+                    'placeholder': "Soyez créatifs 🙂!"
+                }}) }}
+        </div>
+
+        <div>
+            <p>Image de l'article : </p>
+            {{ form_errors(formArticle.image) }}
+            {{ form_widget(formArticle.image)}}
+        </div>               
+
+        <div>
+            {{ form_widget(formArticle.categories) }}
+        </div>
+
+
+     
+        <div>
+            {{ form_widget(formArticle.envoyer, {
+                'label': 'Envoyer',
+                'attr': {
+                    'type': 'submit'
+                }
+            }) }}
+        </div>
+    </div>
+    
+
+
+
+{{ form_end(formArticle) }}
+</div>

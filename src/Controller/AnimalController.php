@@ -60,23 +60,18 @@ class AnimalController extends AbstractController
             $user = $this->getUser();
             $animal->setUser($user);
 
-       
+            $manager->persist($animal);
+            $manager->flush();
 
-                $manager->persist($animal);
-                $manager->flush();
-
-            //    $animalId = $animal->getId()
-
-
-                // $flashy->success("L'animal a bien été ajouté");
-
+                $this->addFlash('success',"L'animal a bien été signalé");
                 return $this->redirectToRoute("homepage");
-            }
+        }
 
-            return $this->render(
-                "/form-animal/create_animal.html.twig", [
-                    "formAnimal" => $formAnimal->createView()
-                ]);
+        return $this->render(
+            "/form-animal/create_animal.html.twig", [
+
+            "formAnimal" => $formAnimal->createView()
+        ]);
 
     }
 }

@@ -25,9 +25,9 @@ class AnimalType extends AbstractType
             ->add("name", TextType::class, ["label" => "Nom de l'animal","required" =>false])
             ->add("status", ChoiceType::class, [
                 "choices" => [
-                    "perdu" => "perdu",
-                    "trouvé" => "trouvé",
-                    "aperçu" => "adoption",
+                    "perdu" => "Perdu",
+                    "trouvé" => "Trouvé",
+                    "aperçu" => "Adoption",
                 ],
                 "multiple" => false,
                 "expanded" => true,
@@ -91,7 +91,7 @@ class AnimalType extends AbstractType
                     'multiple' => false,
 
                 ])
-            ->add('Enregistrer', SubmitType::class);
+            ->add('envoyer', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)
