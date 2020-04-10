@@ -1,38 +1,71 @@
-.polaroids img {
-  border-radius: 10px;
-  width: 100%;
-}
-
-.polaroids a {
+.polaroids .card {
   background: white;
+  padding: 10px 10px 10px 10px;
   display: inline-block;
   text-decoration: none;
-  font-size: 1em;
-  padding: 10px 10px 25px 10px;
-  width: 60%;
-  color: #24313c;
-  border-radius: 10px;
-}
-
-.mini a {
-  background: white;
-  display: inline-block;
-  text-decoration: none;
-  margin: auto 12px;
-  width: 17%;
+  width: 90%;
   color: #8B8B8B;
   border-radius: 10px;
+  /* Animation Button*/
 }
 
-@media (max-width: 767px) {
-  .mini a {
-    padding: 5px 5px 15px 5px;
-    margin: 12px 12px;
-    width: 40%;
-  }
-  .polaroids a {
-    padding: 5px 5px 15px 5px;
-    width: 60%;
-  }
+.polaroids .card .card-picture {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.polaroids .card .card-picture img {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.polaroids .card button {
+  background: #2cb188;
+  color: white;
+  border: none;
+  position: relative;
+  height: 30px;
+  font-size: 1.2em;
+  padding: 0 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.polaroids .card button:hover {
+  background: white;
+  color: #2cb188;
+}
+
+.polaroids .card button:before, .polaroids .card button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #2cb188;
+  -webkit-transition: 400ms ease all;
+  transition: 400ms ease all;
+}
+
+.polaroids .card button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.polaroids .card button:hover:before, .polaroids .card button:hover:after {
+  width: 100%;
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
 }
 /*# sourceMappingURL=polaroid.css.map */

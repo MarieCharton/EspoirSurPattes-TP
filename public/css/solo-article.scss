@@ -1,0 +1,265 @@
+$green : #2cb188;
+$darkgrey : #435259;
+$darkergrey : #24313c;
+/* Article Part */
+
+.solo-article{
+    @extend .article-list;
+    text-align: center;
+
+    h1{
+        font-size: 2.5em;
+    }
+
+    .article-content{
+        padding: 100px;
+        font-size: 1.5em;
+        text-align: justify;
+    }
+    img{
+        border-radius: 25px;
+        float: left;
+        margin: 80px;
+        width:80%;
+        &:hover{
+            filter: brightness(50%);
+            -webkit-filter: brightness(50%);
+            // cursor: url(../images/loupe.png), pointer;
+            cursor: zoom-in;
+            
+        }
+    }
+    .article-image{
+        width:600px;
+
+    }
+    .solo-comment{
+        margin-bottom: 1%;
+    }
+}
+
+/*
+ * Name: jQuery simple lightbox
+ */
+/* Overlay Style */
+#lightboxOverlay { 
+    position:fixed; 
+    top:0; left:0; 
+    width:100%; 
+    height:100%;
+     background-color: rgba( 0,0,0, 0.7 ); 
+     text-align: center; 
+    }
+#lightboxOverlay h3 {
+     color: white; 
+    }
+#lightboxOverlay .fa-times { 
+    position: absolute; 
+    color: white;
+    right: 20px; 
+    top: 20px; 
+    font-size: 100px;
+     cursor: pointer;
+     }
+#lightboxOverlay img {
+     margin-top: 35%;
+     }
+
+/* Responsive Lightbox */
+@media screen and (min-width: 768px) {
+	#lightboxOverlay .fa-times {
+         font-size: 60px;
+          width: 50px; 
+          height: 50px;
+         }
+	#lightboxOverlay .fa-times:before { 
+        line-height: 50px; 
+    }
+	#lightboxOverlay img {
+        width:1200px;
+         margin-top: 5%;
+         max-width: 200%; 
+         max-height:200%;
+         }
+}
+
+/* Comment Part */
+.bloc-comment{
+    @extend .article-list;
+    background-color: white;
+    h1{
+        text-align: center;
+        font-size: 2.5em;
+    }
+    .solo-comment{
+        display: flex;
+        text-align: center;
+        color:white;
+        margin-bottom: 1%;
+        
+    }
+    .user-info{
+        background-color: $darkgrey;
+        border-radius: 20px;
+        width:20%;
+        margin-right: 2%;
+        padding: 1%;
+        
+        
+    }
+    .bloc-content{
+        border-radius: 20px;
+        font-size: 1.3em;
+        background-color: $green;
+      
+        width:70%;
+        margin-left: 2%;
+        padding: 1%;
+        display: flex;
+
+        .comment-content{
+            width:95%
+        }
+        .interaction{
+            width:5%;
+        }
+
+    }
+    p.bulle{
+        color:$darkgrey;
+        font-size: 50px;
+        margin: auto;
+    }
+    .avatar{
+        border-radius: 5px;
+        float: none;
+        margin: 0px;
+        width:10%;
+        &:hover{
+            filter: brightness(100%);
+            -webkit-filter: brightness(100%);
+            cursor: pointer;
+            
+        }
+    }
+    .bottom-link{
+        font-size: 1.5em;
+        text-align: center;
+        a{
+            color:$green;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/* Form Comment */
+.form-comment{
+    textarea{
+        background-color:$green;
+        border: 3px solid white;
+        height: 200px;
+        border-radius: 10px;
+        width:95%;
+    }
+}
+.comment-submit{
+    button#comment_envoyer{
+        background-color: $darkergrey;
+        color:white;
+        width:20%;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1em;
+        cursor: pointer;
+        &:hover{
+            background-color: $darkgrey;
+        }
+    }
+
+}
+
+/******MOBILE******/
+
+@media (max-width:767px){
+    /*Article*/
+    .solo-article{
+        h1{
+            font-size: 1.5em;
+        }
+        .article-content{
+            padding: 8px;
+        }
+        img{
+            float: none;
+            margin: 20px auto;
+            width:90%;
+        }
+        .article-image{
+            width:100%;
+    
+        }
+    }
+
+/*Lightbox */
+	#lightboxOverlay .fa-times {
+         font-size: 60px;
+          width: 50px; 
+          height: 50px;
+    }
+
+	#lightboxOverlay .fa-times:before { 
+        line-height: 150px; 
+    }
+
+	#lightboxOverlay img {
+        width:1200px;
+         margin-top: 25%;
+         max-width: 90%; 
+         max-height:90%;
+    }
+    /* Comment Part */
+    .bloc-comment{
+    h1{
+        font-size: 1.5em;
+    }
+    .user-info{
+        margin: auto;
+        padding: 10px 10px 10px 10px;
+    }
+    p.bulle{
+        display: none;
+    }
+    .avatar{
+        width:60%;
+    }
+    .bottom-link{
+
+        font-size: 1.2em;
+    }
+}
+}
+/******TABLET*****/
+
+@media (min-width:768px)and (max-width:1280px){
+   
+        .bloc-comment{
+            h1{
+                font-size: 1.5em;
+            }
+            .user-info{
+                margin: auto;
+                padding: 10px 10px 10px 10px;
+            }
+            p.bulle{
+                display: none;
+            }
+            .avatar{
+                width:60%;
+            }
+    }
+}
+
+
+
+  

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{article.title|capitalize}}{% endblock %}
+
+{% block body %}
+
+{% include 'include/header.html.twig' %}
+
+{% include 'news/layout/_banner_news.html.twig' %}
+
+{% include 'include/interline-animals.html.twig' %}
+
+{% include 'news/layout/_solo_article.html.twig' %}
+
+{% include 'news/layout/_comment.html.twig' %}
+
+
+{% include 'include/footer.html.twig' %}
+
+{% endblock %}

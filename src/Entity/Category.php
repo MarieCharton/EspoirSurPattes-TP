@@ -22,10 +22,13 @@ class Category
      */
     private $name;
 
-        /**
-     * @ORM\ManyToMany(targetEntity="Article", inversedBy="categories")
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="categories")
      */
     private $articles;
+
+
 
     public function __construct()
     {
@@ -52,7 +55,7 @@ class Category
 
     /**
      * Get the value of articles
-     */ 
+     */
     public function getArticles()
     {
         return $this->articles;
@@ -62,7 +65,7 @@ class Category
      * Set the value of articles
      *
      * @return  self
-     */ 
+     */
     public function setArticles($articles)
     {
         $this->articles = $articles;

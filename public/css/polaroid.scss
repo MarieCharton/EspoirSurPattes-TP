@@ -2,56 +2,99 @@ $green : #2cb188;
 $darkgrey : #435259;
 $darkergrey : #24313c;
 
+
+
 .polaroids {
 
-  img {
-    border-radius: 10px;
-    width: 100%;
-  }
-    a {
+  .card {
     background: white;
+    padding: 10px 10px 10px 10px;
     display: inline-block;
     text-decoration: none;
-    font-size: 1em;
-    padding: 10px 10px 25px 10px;
-    // margin: 0 0 27px 30px;
-    width: 60%;
-    color: $darkergrey ;
+    // margin: auto 12px;
+    width: 90%;
+    color: #8B8B8B;
     border-radius: 10px;
+    
+    .card-picture{
+      overflow:hidden;
+      // background-color: yellow;
+      display: flex;
+  
+      img{
+        width:400px;
+        height:400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+
+
+      }
+    }
+  /* Animation Button*/
+    button{
+      background:$green;
+      color: white;
+      border:none;
+      position:relative;
+      height:30px;
+      font-size:1.2em;
+      padding:0 2em;
+      border-radius: 5px;
+      cursor:pointer;
+      transition:800ms ease all;
+      outline:none;
+    }
+    button:hover{
+      background:white;
+      color:$green;
+    }
+    button:before,button:after{
+      content:'';
+      position:absolute;
+      top:0;
+      right:0;
+      height:2px;
+      width:0;
+      background: $green;
+      transition:400ms ease all;
+    }
+    button:after{
+      right:inherit;
+      top:inherit;
+      left:0;
+      bottom:0;
+    }
+    button:hover:before,button:hover:after{
+      width:100%;
+      transition:800ms ease all;
+    }
+    
 
   }
 }
-.mini{
-  a {
-    background: white;
-    display: inline-block;
-    text-decoration: none;
-    // font-size: 1em;
-    // padding: 10px 10px 25px 10px;
-    margin: auto 12px;
-    width: 17%;
-    // height: 350px;
-    color: #8B8B8B;
-    border-radius: 10px;
-  }
-}
+
+
+
+
+
+
+
 
 @media (max-width:767px){
 
-  .mini{
-    a {
-      padding: 5px 5px 15px 5px;
-      margin:12px 12px;
-      width: 40%;
-    }
-  }
-  .polaroids {
-      a {
-      padding: 5px 5px 15px 5px;
-      // margin:12px 12px;
-      width: 60%;
-    }
-  }
+  // .polaroids {
+  //   .card {
+  //     padding: 10px 10px 10px 10px;
+  //     display: inline-block;
+  //     text-decoration: none;
+  //     margin: auto 12px;
+  //     width: 80%;
+  //     color: #8B8B8B;
+  //     border-radius: 10px;
+
+  //   }
+  // }
 }
 
 @media (min-width:768px)and (max-width:1280px){

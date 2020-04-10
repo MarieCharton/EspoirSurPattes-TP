@@ -1,0 +1,66 @@
+<!-- Start Comment -->
+<div class="bloc-comment">
+	<h1>Commentaires
+		<i class="far fa-comments"></i>
+	</h1>
+	{% if comments is empty %}
+	<p class="bottom-link">Il n'y a pas encore de commentaires sur cet article </p>
+	{% endif %}
+		{% for comment in comments %}
+	<div class="solo-comment">
+			<div class="user-info">
+				<img class="avatar" src="https://steemitimages.com/p/3MxaK27PJLbN4WbSHXdEUTWy3cWzqS69NSLiZRie9xTej1x?format=match&mode=fit&width=640" alt="avatar">
+				<p><i class="fas fa-pencil-alt"></i> Publié par {{ comment.user.userName }}</p>
+				<p><i class="far fa-clock"></i> Le   {{ comment.createdAt|date("d/m/Y") }}</p>
+			</div>
+			<p class="bulle">
+				<i class="far fa-comment-dots"></i>
+			</p>
+			<div class="bloc-content">
+				<div class="comment-content">
+					<p>"{{comment.content|capitalize}}"</p>
+				</div>
+				<div class="interaction">
+					<a title='Signaler' href=""><p><i class="fas fa-exclamation"></i> </p></a>
+					<a title='Modifier' href=""><p><i class="fas fa-pen-nib"></i> </p></a>
+					<a title='Supprimer' href=""><p><i class="fas fa-trash-alt"></i> </p></a>
+				</div>
+
+			</div>
+	</div>
+		{% endfor %}
+	{% if app.user == false %}
+	<p class="bottom-link">Pour réagir a cet article <a href="{{ path ('create_account') }}"> Inscrivez vous </a> ou <a href="{{ path ('app_login') }}"> Connectez vous</a></p>
+	{% endif %}
+
+	{% if app.user %}
+	<p class="bottom-link">Poster un commentaire :</p>
+	<div class="solo-comment">
+		<div class="user-info">
+			<img class="avatar" src="https://steemitimages.com/p/3MxaK27PJLbN4WbSHXdEUTWy3cWzqS69NSLiZRie9xTej1x?format=match&mode=fit&width=640" alt="avatar">
+			<p><i class="fas fa-pencil-alt"></i> Publié par  {{ app.user.username }}</p>
+			<p><i class="far fa-clock"></i> Le {{ "now"|date("d/m/Y") }} </p>
+		</div>
+		<p class="bulle"><i class="far fa-comment-dots"></i></p>
+		<div class="comment-content">
+            {{ form_start(formComment) }}
+            <div class="form-comment">
+                {{ form_errors(formComment.content) }}
+                {{ form_widget(formComment.content, {
+                'attr': {
+                    'placeholder': "Les commentaires sont un espace d’expression des avis des internautes, merci de respecter l’avis de chacun. Nous encourageons les internautes à rester courtois afin que le débat se déroule dans les meilleures conditions.  Vous pouvez ne pas être d’accord avec un article. Expliquez ce qui motive votre commentaire, sans vous montrer agressif. La critique constructive oui, les insultes non. 🙂!"
+                }}) }}
+            </div>
+            <div class="comment-submit">
+            {{ form_widget(formComment.envoyer, {
+                'label': 'Poster',
+                'attr': {
+                    'type': 'submit'
+                }
+            }) }}
+            </div>
+            {{ form_end(formComment) }}
+		</div>
+	</div>
+	{% endif %}
+</div>

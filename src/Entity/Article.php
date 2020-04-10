@@ -32,7 +32,7 @@ class Article
      */
     private $content;
 
-        /**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
@@ -59,9 +59,10 @@ class Article
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="articles")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="articles")
      */
     private $categories;
+
 
 
     public function __construct()
@@ -138,7 +139,7 @@ class Article
 
     /**
      * Get the value of image
-     */ 
+     */
     public function getImage()
     {
         return $this->image;
@@ -148,7 +149,7 @@ class Article
      * Set the value of image
      *
      * @return  self
-     */ 
+     */
     public function setImage($image)
     {
         $this->image = $image;
@@ -158,7 +159,7 @@ class Article
 
     /**
      * Get the value of user
-     */ 
+     */
     public function getUser()
     {
         return $this->user;
@@ -168,7 +169,7 @@ class Article
      * Set the value of user
      *
      * @return  self
-     */ 
+     */
     public function setUser($user)
     {
         $this->user = $user;
@@ -178,7 +179,7 @@ class Article
 
     /**
      * Get the value of comments
-     */ 
+     */
     public function getComments()
     {
         return $this->comments;
@@ -188,7 +189,7 @@ class Article
      * Set the value of comments
      *
      * @return  self
-     */ 
+     */
     public function setComments($comments)
     {
         $this->comments = $comments;
@@ -198,7 +199,7 @@ class Article
 
     /**
      * Get the value of categories
-     */ 
+     */
     public function getCategories()
     {
         return $this->categories;
@@ -208,7 +209,7 @@ class Article
      * Set the value of categories
      *
      * @return  self
-     */ 
+     */
     public function setCategories($categories)
     {
         $this->categories = $categories;

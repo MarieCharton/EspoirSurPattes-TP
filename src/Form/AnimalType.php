@@ -27,7 +27,7 @@ class AnimalType extends AbstractType
                 "choices" => [
                     "perdu" => "Perdu",
                     "trouvé" => "Trouvé",
-                    "aperçu" => "Adoption",
+                    "aperçu" => "Aperçu",
                 ],
                 "multiple" => false,
                 "expanded" => true,

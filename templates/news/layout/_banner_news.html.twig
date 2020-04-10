@@ -1,0 +1,14 @@
+<!-- start Banner -->
+<div class="banner-news">
+    <div class="empty"></div>
+    <div class="bannertext">
+        <h1>Vous souhaitez partager un article avec nous ?</h1>
+        {% if app.user == false %}
+        <a class="btn" href="{{ path('create_account') }}">S'incrire pour publier un article</a>
+        {% endif %}
+        {% if app.user %}
+         <a class="btn" href="{{path("article_create")}}">Publier un article</a>
+        {% endif %}
+    </div>
+</div>
+<!-- End banner  -->

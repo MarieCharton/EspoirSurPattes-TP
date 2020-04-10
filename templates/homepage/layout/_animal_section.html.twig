@@ -1,25 +1,17 @@
-
 <!-- Start Animal Section -->
-<div class="animal-section">
+<div class="section">
     <h1> <i class="fas fa-bell"></i> Les derniers animaux signalés</h1>
-    <div class="polaroids mini">
-        <a href="link" title="Népal">
-            <img src="../images/nepal.jpg" alt="Népal" />
-            <p>Chien perdu a Dijon (Bourgogne)</p>
-        </a>
-        <a href="link" title="Népal">
-            <img src="../images/nepal.jpg" alt="Népal" />
-            <p>Chien perdu a Dijon (Bourgogne)</p>
-        </a>
-        <a href="link" title="Népal">
-            <img src="../images/LogoRond.png" alt="Népal" />
-            <p>Chien perdu a Dijon (Bourgogne)</p>
-
-        </a>
-        <a href="link" title="Népal">
-            <img src="../images/nepal.jpg" alt="Népal" />
-            <p>Chien perdu a Dijon (Bourgogne)</p>
-        </a>
+    <div class="polaroids owl-carousel">
+        {% for animal in animals %}
+        <div class ="card">
+            <div class="card-picture">
+                <img src="{{ asset('uploads/' ~ animal.image) }}" alt="" />
+            </div>
+            <p>{{ animal.type.name }} {{ animal.status }} à {{ animal.city }}</p>
+            <p>{{ animal.type.name }}</p>
+            <button class="card-button wobble-bottom">En savoir plus</button>
+       </div>
+        {% endfor %}
     </div>
 </div>
 <!-- End Animal Section -->

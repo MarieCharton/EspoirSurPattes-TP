@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}News{% endblock %}
+
+{% block body %}
+
+{% include 'include/header.html.twig' %}
+
+{% include 'news/layout/_banner_news.html.twig' %}
+
+{% include 'include/interline-animals.html.twig' %}
+
+{% include 'news/layout/_categories_list.html.twig' %}
+
+{% include 'include/interline-animals.html.twig' %}
+
+{% include 'news/layout/_news_content.html.twig' %}
+
+{% include 'include/footer.html.twig' %}
+
+{% endblock %}

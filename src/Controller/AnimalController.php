@@ -50,7 +50,7 @@ class AnimalController extends AbstractController
                 $animal->setImage($fileName);
                 
             } else {
-                $animal->setImage("help.png");
+                $animal->setImage("LogoRond.png");
             }
 
             //Set the date automatically
