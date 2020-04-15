@@ -1,0 +1,67 @@
+{# Start Solo Animal #}
+<div class="solo-animal">
+    <h1> <i class="fas fa-exclamation-triangle"></i> {{ animal.type.name|capitalize}} {{ animal.status}}  a {{ animal.city|capitalize}} ( {{ animal.department.name }} ) le {{ animal.createdAt.date|date("d/m/Y") }} </h1>
+    <div class="animal-content">
+        <div class="img-animal">
+            <img src="{{ asset("uploads/" ~ animal.image) }}" alt="{{ animal.type.name}}">
+        </div>
+        <div class="info-animal">
+
+            <p>Nom de l'animal : 
+            {% if animal.name is empty %}
+            non renseigné
+            {% else %}
+            {{ animal.name|capitalize}}</p>
+            {% endif %}
+
+            <p>Age de l'animal :
+            {% if animal.age is empty %}
+            non renseigné
+            {% else %}
+            {{ animal.age}} an(s)</p>
+            {% endif %}
+
+            <p>Identification : 
+            {% if animal.identification == "nsp" %}
+            non renseigné
+            {% else %}
+            {{ animal.identification}}</p>
+            {% endif %}
+
+            <p>Sexe :
+            {% if animal.sex == "femelle" %}
+            <i class="fas fa-venus"></i> {{ animal.sex}}</p>
+            {% elseif animal.sex == "male" %}
+            <i class="fas fa-mars"></i> {{ animal.sex}}</p>
+            {% elseif animal.sex == "nsp" %}
+            non renseigné
+            {% endif %}
+            <p> <i class="fas fa-map-marker-alt"></i> Quartier/Secteur :
+            {% if animal.area is empty %}
+             non renseigné
+            {% else %}
+            {{ animal.area}} </p>
+            {% endif %}
+            <p> <i class="fas fa-info-circle"></i>  Description :
+            {% if animal.description is empty %}
+             non renseigné
+            {% else %}
+            {{ animal.description}}</p>
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="contact">
+        <p><i class="fas fa-binoculars"></i>  Cet animal a été signalé par {{animal.user.username}} </p>
+
+             {% if animal.status == "trouvé" or animal.status == "aperçu" %}
+                <p>C'est votre animal ? <a href="">Contactez nous vite ! </a></p>
+            {% endif  %}
+             {% if animal.status == "perdu" %}
+                <p> Vous avez receuilli ou aperçu cet animal ? <a href=""> Contactez nous vite ! </a></p>
+            {% endif  %}
+
+    </div>
+</div>
+
+{# End Solo Animal #}

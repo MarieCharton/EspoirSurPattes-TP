@@ -1,0 +1,86 @@
+$green : #2cb188;
+$darkgrey : #435259;
+$darkergrey : #24313c;
+
+.solo-animal{
+
+    @extend .article-list !optional;
+    text-align: center;
+    .animal-content{
+        display: flex;
+        justify-content: space-evenly;
+        background-color:white;
+        border-radius: 20px;
+        padding : 1%;
+
+    }
+    .img-animal{
+        // background-color: blue;
+        margin: auto;
+        width:50%;
+        img{
+            border: 3px solid $darkergrey;
+            border-radius: 20px;
+            width: 70%;
+        }
+    }
+    .info-animal{
+        // background-color: green;
+        width: 50%;
+        text-align: left;
+        padding: 5%;
+        font-size: 1.5em;
+    }
+    .contact{
+        font-size: 1.2em;
+    }
+}
+
+/******MOBILE*****/
+@media (max-width:767px){
+    .solo-animal{
+        h1{
+            font-size: 1.2em;
+        }
+        .animal-content{
+            display: block;
+            font-size: 0.8em;
+            padding: 5%;
+    
+        }
+        .img-animal{
+            width:90%;
+            img{
+                width: 100%;
+            }
+        }
+        .info-animal{
+            width: 90%;
+            text-align: center;
+        }
+    }
+}
+
+
+/******TABLET*****/
+@media (min-width:768px)and (max-width:1280px){
+   
+.solo-animal{
+    .animal-content{
+        display: block;
+        padding : 3%;
+
+    }
+    .img-animal{
+        width:90%;
+        img{
+            width: 80%;
+        }
+    }
+    .info-animal{
+        text-align: center;
+        width: 90%;
+        font-size: 1.3em;
+    }
+}
+}

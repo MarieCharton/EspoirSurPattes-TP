@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnimalRepository")
@@ -18,6 +19,12 @@ class Animal
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 100,
+     *      minMessage = "Le nom de l'animal doit contenir minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom de l'animal doit contenir maximum {{ limit }} caractères"
+     * )
      */
     private $name;
 
@@ -28,6 +35,13 @@ class Animal
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Positive
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 2,
+     *      minMessage = "L'âge de l'animal doit contenir minimum {{ limit }} chiffre",
+     *      maxMessage = "L'âge de l'animal doit contenir maximum {{ limit }} chiffres"
+     * )
      */
     private $age;
 
@@ -38,6 +52,10 @@ class Animal
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(
+     *      max = 500,
+     *      maxMessage = "La descripton de l'animal doit contenir maximum {{ limit }} caractères"
+     * )
      */
     private $description;
 
@@ -48,11 +66,24 @@ class Animal
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 100,
+     *      minMessage = "Le champ doit contenir minimum {{ limit }} caractères",
+     *      maxMessage = "Le champ doit contenir maximum {{ limit }} caractères"
+     * )
      */
+
     private $area;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 100,
+     *      minMessage = "La ville doit contenir minimum {{ limit }} caractères",
+     *      maxMessage = "La ville doit contenir maximum {{ limit }} caractères"
+     * )
      */
     private $city;
 
@@ -93,7 +124,7 @@ class Animal
      */
     private $region;
 
-    
+
 
     public function getId(): ?int
     {
@@ -234,7 +265,7 @@ class Animal
 
     /**
      * Get the value of user
-     */ 
+     */
     public function getUser()
     {
         return $this->user;
@@ -244,7 +275,7 @@ class Animal
      * Set the value of user
      *
      * @return  self
-     */ 
+     */
     public function setUser($user)
     {
         $this->user = $user;
@@ -254,7 +285,7 @@ class Animal
 
     /**
      * Get the value of department
-     */ 
+     */
     public function getDepartment()
     {
         return $this->department;
@@ -264,7 +295,7 @@ class Animal
      * Set the value of department
      *
      * @return  self
-     */ 
+     */
     public function setDepartment($department)
     {
         $this->department = $department;
@@ -274,7 +305,7 @@ class Animal
 
     /**
      * Get the value of type
-     */ 
+     */
     public function getType()
     {
         return $this->type;
@@ -284,7 +315,7 @@ class Animal
      * Set the value of type
      *
      * @return  self
-     */ 
+     */
     public function setType($type)
     {
         $this->type = $type;
@@ -294,7 +325,7 @@ class Animal
 
     /**
      * Get the value of region
-     */ 
+     */
     public function getRegion()
     {
         return $this->region;
@@ -304,7 +335,7 @@ class Animal
      * Set the value of region
      *
      * @return  self
-     */ 
+     */
     public function setRegion($region)
     {
         $this->region = $region;

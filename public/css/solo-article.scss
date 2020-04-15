@@ -1,14 +1,23 @@
 $green : #2cb188;
 $darkgrey : #435259;
 $darkergrey : #24313c;
+$fontheader :'Pacifico', cursive;
+$font: 'Dosis', sans-serif;
 /* Article Part */
 
 .solo-article{
-    @extend .article-list;
+    @extend .article-list !optional;
     text-align: center;
 
-    h1{
-        font-size: 2.5em;
+    .top-article{
+        display: flex;
+        justify-content: space-between;
+        h1{
+            font-size: 2.5em;
+          margin:auto;
+
+        }
+
     }
 
     .article-content{
@@ -85,7 +94,7 @@ $darkergrey : #24313c;
 
 /* Comment Part */
 .bloc-comment{
-    @extend .article-list;
+    @extend .article-list !optional;
     background-color: white;
     h1{
         text-align: center;
@@ -128,7 +137,7 @@ $darkergrey : #24313c;
     p.bulle{
         color:$darkgrey;
         font-size: 50px;
-        margin: auto;
+        // margin: auto;
     }
     .avatar{
         border-radius: 5px;
@@ -154,29 +163,24 @@ $darkergrey : #24313c;
     }
 }
 /* Form Comment */
-.form-comment{
-    textarea{
-        background-color:$green;
-        border: 3px solid white;
-        height: 200px;
-        border-radius: 10px;
-        width:95%;
-    }
+.comment{
+    width: 100%;
 }
-.comment-submit{
-    button#comment_envoyer{
-        background-color: $darkergrey;
-        color:white;
-        width:20%;
-        border-radius: 10px;
-        padding: 10px;
-        font-size: 1em;
-        cursor: pointer;
-        &:hover{
-            background-color: $darkgrey;
-        }
-    }
-
+#comment_content{
+    width:100%;
+    border-radius: 10px;
+    height: 100px;
+    font-family: $font;
+    font-size: 1em;
+}
+#comment_envoyer{
+    background-color: #24313c;
+    color: white;
+    width: 20%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
 }
 
 /******MOBILE******/

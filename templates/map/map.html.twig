@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La carte {% endblock %}
+
+{% block body %}
+
+{% include 'include/header.html.twig' %}
+
+{% include 'map/layout/_banner_map.html.twig' %}
+
+{% include 'include/interline-animals.html.twig' %}
+
+{% include 'map/layout/_map_content.html.twig' %}
+
+{% include 'include/footer.html.twig' %}
+
+{% endblock %}

@@ -19,8 +19,9 @@ class AnimalController extends AbstractController
     public function __construct(AnimalRepository $animalRepository)
     {
         $this->repository = $animalRepository;
-
     }
+
+    // !CRUD !//
 
     /**
      * @Route("/create", name="animal_create")
@@ -35,20 +36,19 @@ class AnimalController extends AbstractController
 
 
         if ($formAnimal->isSubmitted() && $formAnimal->isValid()) {
-            
-      
+
+
             $manager = $this->getDoctrine()->getManager();
 
             $file = $formAnimal['image']->getData();
 
-            
+
             //Animal Picture :
             if (!empty($file)) {
 
                 $fileName = $imageUploader->moveAndRename($file);
-                
+
                 $animal->setImage($fileName);
-                
             } else {
                 $animal->setImage("LogoRond.png");
             }
@@ -62,16 +62,30 @@ class AnimalController extends AbstractController
 
             $manager->persist($animal);
             $manager->flush();
+            $animalId = $animal->getId();
 
-                $this->addFlash('success',"L'animal a bien été signalé");
-                return $this->redirectToRoute("homepage");
+            $this->addFlash('success', "L'animal a bien été signalé");
+            return $this->redirectToRoute("animal_view", ['id' => $animalId]);
         }
 
         return $this->render(
-            "/form-animal/create_animal.html.twig", [
+            "/form-animal/create_animal.html.twig",
+            [
+                "formAnimal" => $formAnimal->createView()
+            ]
+        );
+    }
 
-            "formAnimal" => $formAnimal->createView()
-        ]);
-
+    /**
+     * @Route("/{id}/view", name="animal_view")
+     */
+    public function animalById(Animal $animal)
+    {
+        return $this->render(
+            "animal/solo_animal.html.twig",
+            [
+                "animal" => $animal,
+            ]
+        );
     }
 }

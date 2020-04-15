@@ -1,7 +1,9 @@
 @import "polaroid.scss";
 @import "news.scss";
 @import "solo-article.scss";
-
+@import "solo-animal.scss";
+@import "map.scss";
+@import "contact.scss";
 
 
 
@@ -22,6 +24,14 @@ body{
 a{
     text-decoration: none;
 }
+.interligne{
+    border: 2px solid $darkergrey;
+    margin: auto;
+    width :10%;
+}
+.title-top-page{
+    font-size:3em;
+}
 
 /* HEADER */
 .header{
@@ -33,6 +43,7 @@ a{
 
     a{
         color:$green;
+        transition:800ms ease all;
         &:hover{
             color:white;
             cursor: pointer;
@@ -127,8 +138,10 @@ a{
             background-color:$darkergrey;
             color: #f7fbfe;
             padding: 15px;
+            border: 2px solid $darkergrey;
             border-radius: 20px;
             text-decoration: none;
+            transition:800ms ease all;
 
             &:hover{
                 color:$darkgrey;
@@ -150,7 +163,30 @@ a{
     background-image: url("../images/banner/news4.jpg");
     background-size: 118%;
     background-position: 100% 48%;
+}
+.banner-map{
+    @extend .banner;
+    /*Banner 1*/
+    // background-image: url("../images/banner/map.jpg");
+    // background-size: 115%;
+    // background-position: 100% 18%;
+    /*Banner 2*/
+    background-image: url("../images/banner/map2.jpg");
+    background-size: 60%;
+    background-position: 0% 28%;
+    background-color: #f5f7f8;
+    /*Banner 3*/
+    // background-image: url("../images/banner/map3.jpg");
+    // background-size: 100%;
+    // background-position: 100% 50%;
 
+}
+.banner-contact{
+    @extend .banner;
+    background-image: url("../images/banner/contact.jpg");
+    background-size: 100%;
+    // background-position: 0% 28%;
+    border: 3px solid white;
 }
 
 /*Interligne Animaux */
@@ -206,9 +242,31 @@ a{
     background-color: $darkgrey;
     border-radius: 20px;
     text-align: center;
-    h1{
-        font-size :2em;
-        color: $green;
+
+    .intro-card{
+
+        display: flex;
+        justify-content: center;
+        font-size :1em;
+        h1{
+            color: $green;
+        }
+        .card-access{
+            color:$green;
+            background-color: $darkgrey;
+            border: 1px solid $green;   
+            margin:auto 100px;
+            padding: 10px;
+            border-radius: 10px;
+            transition:800ms ease all;
+            outline:none;
+            font-size: 1.3em;
+            &:hover{
+                color: white;
+                border: 1px solid white;   
+            }
+      
+        }
     }
 
     .owl-nav{
@@ -219,7 +277,10 @@ a{
         .owl-prev {
         color: $green;
         font-size: 1em;
+        transition:800ms ease all;
         background: #11ffee00;
+
+
             &:hover{
                 color :$green;
             } 
@@ -284,16 +345,17 @@ a{
 }
 
 /*FORMULAIRES*/
-p{
-    font-weight: bold;
-}
 
+input:focus {
+    outline:none;
+}
 .instruction{
     color:rgb(189, 70, 70);
 }
 
 a.connexion{
     color:$darkgrey;
+    transition:800ms ease all;
     &:hover{
         color:white;
     }
@@ -304,6 +366,7 @@ a.connexion{
     font-size: 1.2em;
     font-style: italic;
     text-align: center;
+    font-family: $font;
   }
 .form{
     background-color: $green;
@@ -316,6 +379,14 @@ a.connexion{
     text-align: center;
     display: flex;
     flex-direction: column;
+    font-size: 1.3em;
+    
+    ul{
+        color:rgb(189, 70, 70);
+            list-style: none;
+            font-weight: bold;
+        }
+
     .form-header {
         color: white;
         background-color: $darkgrey;
@@ -332,6 +403,8 @@ a.connexion{
         border-radius: 10px;
         padding: 8px;
         text-transform: capitalize;
+        font-family: $font;
+        font-size :1.2em;
     }
     #animal_department{
         @extend #animal_type;
@@ -355,12 +428,12 @@ a.connexion{
     }
     div#animal_status{
 
-        @extend div#animal_identification;
+        @extend div,#animal_identification;
     }
 
     div#animal_sex{
 
-        @extend div#animal_identification;
+        @extend div,#animal_identification;
     }
 
     button#animal_envoyer{
@@ -392,12 +465,12 @@ a.connexion{
         height: 200px;
         border-radius: 10px;
         width:50%;
+        font-size: 1em;
     }
     .column{
         @extend textarea;
-        // background-color: red;
         margin: 0 auto;
-        height: 80px;
+        height: 100px;
         margin-top:10px;
 
     }
@@ -414,7 +487,7 @@ a.connexion{
         label{
             font-size: 20px;
             text-transform: capitalize;
-            padding-right: 10px; 
+            padding-right: 10px;
         }
     }
 }
@@ -425,12 +498,13 @@ a.connexion{
 
     /* HEADER */
     .header{
-        width:100%;
+        // width:100%;
         text-align: center;
         display: inline;
         position:fixed;
         background: $darkergrey;
         z-index: 8;
+        width: 100%;
     
         .logo{
             font-size: 1.8em;
@@ -443,7 +517,7 @@ a.connexion{
     
     #responsive-nav{
         display: none;
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
         
     }
@@ -495,7 +569,16 @@ a.connexion{
     .section{
         height:40%;
         h1{
-            font-size :1em;
+            font-size :1.5em;
+        }
+        .intro-card{
+            width: 100%;
+            flex-direction: column;
+            .card-access{
+                font-size :1em;
+                margin:10px auto;
+                padding: 10px;
+            }
         }
     }
     
@@ -526,15 +609,18 @@ a.connexion{
 
     .form{
         width:90%;
+        .form-header{
+            font-size: 0.8em;
+        }
 
         #animal_type{
             width: 50%;
         }
     
-
         input{
             height: 35px;
-            width:80%;
+            width:90%;
+            font-size: 0.8em;
         }
         div#animal_identification{
             input{
@@ -552,10 +638,8 @@ a.connexion{
             width:80%;
         }
         .column{
-            height: 100px;
+            height: 130px;
         }
-    
-     
     }
 }
 

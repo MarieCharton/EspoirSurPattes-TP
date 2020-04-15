@@ -1,6 +1,8 @@
 {# Start Article By Category Section #}
 <div class="section category-list">
-    <h1> <i class="far fa-bookmark"></i> Les articles par catégorie</h1>
+	<div class="intro-card">
+        <h1> <i class="far fa-bookmark"></i> Les articles par catégorie</h1>
+    </div>
     <div class=" polaroids owl-carousel">
     {% for category in categories %}
         <div class="card ">
@@ -9,7 +11,6 @@
             </div>
             <div class="info">
                 <p>{{ category.name|capitalize}}</p>
-                {# <button class="card-button wobble-bottom">Voir tout les articles</button> #}
                 <button class="card-button wobble-bottom"><a href="{{ path("articles__by_category",{id: category.id}) }}">Voir tout les articles</a></button>
             </div>
         </div>

@@ -4,10 +4,11 @@
     <div class="bannertext">
         <h1>Vous avez perdu ou trouvé un animal?</h1>
         {% if app.user == false %}
-        <a class="btn" href="{{ path('create_account') }}">S'incrire pour faire un signalement</a>
+        <a class="btn" href="{{ path('create_account') }}">S'incrire pour faire un signalement </a>
         {% endif %}
         {% if app.user %}
-         <a class="btn" href="{{path("animal_create")}}">Faire un signalement</a>
+        <a class="btn" href="{{path("animal_create")}}">Faire un signalement</a>
+        <a class="btn" href="{{path("animal_create")}}">Acceder a la carte </a>
         {% endif %}
     </div>
 </div>

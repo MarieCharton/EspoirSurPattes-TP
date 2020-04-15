@@ -20,6 +20,9 @@ security:
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
+            # form_login:
+            #     use_referer: true
+
             logout:
                 path: app_logout
 

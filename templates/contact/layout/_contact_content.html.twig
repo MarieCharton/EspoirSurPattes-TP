@@ -1,0 +1,28 @@
+{# Start content Contact Page  #}
+<div class="contact-page">
+    <h1 class = "title-top-page"><i class="fas fa-envelope"></i> Nous contacter</h1>
+      <div class="interligne"></div>
+      <div class ="intro">
+        <p>Vous avez une question? Une suggestion? Besoin d'un renseignement? N'hésitez pas a nous contacter a l'aide du formulaire ci dessous, nous vous répondrons au plus vite ! </p>
+      </div>
+      <div class="line"></div>
+        <div class="form-contact">
+            <form method="post" id="contactForm">
+                <div class="form-group">
+                    <input name ="name" required="required" type="text" class="form-control" placeholder="Entrez votre Nom">
+                </div>
+                
+                <div class="form-group">
+                    <input name ="email" required="required" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Entrez votre email">
+                </div>
+                
+                <div class="form-group">
+                    <textarea name ="message" required="required" class="form-control" id="exampleFormControlTextarea1" placeholder="Ajoutez un message..." rows="6"></textarea>
+                </div>
+                <button type="submit" name="submit"  class="send-mail">Envoyer <i class="far fa-paper-plane"></i></button>
+                <input type="hidden" id="g-token" name="gtoken">
+            </form>
+        </div>
+    </div>
+</div>
+{# End content Contact Page  #}

@@ -1,8 +1,20 @@
 <div class="form">   
 {{ form_start(formArticle) }}
+
+    {# Header for update  #}
+    {% if app.request.get('_route') == 'article_update' %}
+        <div class="form-header">   
+            <h2><i class="fas fa-edit"></i> Modifier un article</h2>        
+        </div>
+    {% endif %}
+
+    {# Header for create #}
+   {% if app.request.get('_route') == 'article_create' %}
     <div class="form-header">   
         <h2><i class="fas fa-edit"></i> Publier un article</h2>        
     </div>
+    {% endif %}
+
     <div class="form-content">   
         <p class ="instruction">Renseignements obligatoire *</p>
    

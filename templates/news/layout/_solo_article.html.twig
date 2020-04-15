@@ -1,26 +1,39 @@
 <!-- Start Solo Article  -->
 <div class="solo-article">
 	<article>
-		<h1>
-			{{ article.title|capitalize}}</h1>
-		<div class="display">
+	<div class= "top-article">
+		<h1>{{ article.title|capitalize}}</h1>
+		<div class="interaction">
+			<a title='Signaler' href=""><p><i class="fas fa-exclamation"></i> </p></a>
+			{% if is_granted('ROLE_USER') %}
+			{% if is_granted ('update', article) %}
+			<a title='Modifier' href="{{path("article_update",{id: article.id})}}"><p><i class="fas fa-pen-nib"></i> </p></a>
+			{% endif %}
+			{% if is_granted ('delete', article) %}
+			<a title='Supprimer' href="{{path("article_delete",{id: article.id})}}" onclick="return confirm('Confirmez la suppression ?')"><p><i class="fas fa-trash-alt"></i> </p></a>
+			{% endif %}
+			{% endif %}
 
-			<div id="deadSimpleLightbox" class="container">
-				<div class="row">
-					<div class="article-image">
-						<img class="img-solo-article" src="{{ asset("uploads/" ~ article.image) }}" alt="Decription image">
-					</div>
+		</div>
+	</div>
+	<div class="display">
+		<div id="deadSimpleLightbox" class="container">
+			<div class="row">
+				<div class="article-image">
+					<img class="img-solo-article" src="{{ asset("uploads/" ~ article.image) }}" alt="Image de l'article">
 				</div>
-				<div class="article-content">
-					{% for category in article.categories %}
-						<a class="category-btn {{ category.name}} " href="{{ path("articles__by_category",{id: category.id}) }}">{{ category.name|capitalize }}</a>
-					</span>
+			</div>
+			<div class="article-content">
+				{% for category in article.categories %}
+				<a class="category-btn {{ category.name}} " href="{{ path("articles__by_category",{id: category.id}) }}">{{ category.name|capitalize }}</a></span>
 				{% endfor %}
 				<p><i class="far fa-clock"></i> Publié le {{ article.createdAt.date|date("d/m/Y") }}</p>
 				<p> Par <i class="far fa-user"></i> {{ article.user.username }}</p>
 				<p> <i class="far fa-comments"></i>  {{ article.comments|length }} Commentaire(s)</p>
-
 				<p>{{ article.content}}</p>
+				{% if article.updatedAt is not null and article.updatedAt is defined %}
+				<p><small>   Cet article a été mis a jour le {{ article.updatedAt.date|date("d/m/Y") }} </small> </p>
+				{% endif %}
 			</div>
 		</div>
 	</article>

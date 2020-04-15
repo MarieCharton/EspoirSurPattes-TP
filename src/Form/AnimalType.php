@@ -25,9 +25,9 @@ class AnimalType extends AbstractType
             ->add("name", TextType::class, ["label" => "Nom de l'animal","required" =>false])
             ->add("status", ChoiceType::class, [
                 "choices" => [
-                    "perdu" => "Perdu",
-                    "trouvé" => "Trouvé",
-                    "aperçu" => "Aperçu",
+                    "Perdu" => "perdu",
+                    "Trouvé" => "trouvé",
+                    "Aperçu" => "aperçu",
                 ],
                 "multiple" => false,
                 "expanded" => true,
@@ -39,25 +39,26 @@ class AnimalType extends AbstractType
                 "multiple" => false,
                 "expanded" => true,
                 "choices" => [
-                    "Pucé" => "Pucé",
-                    "Tatoué" => "Tatoué",
-                    "Non Identifié" => "Non Identifié",
-                    "Je ne sais pas" => "Je ne sais pas",
+                    "Pucé" => "pucé",
+                    "Tatoué" => "tatoué",
+                    "Non Identifié" => "non identifié",
+                    "Je ne sais pas" => "nsp",
                     
                 ],
                 "label" => "Identification"
             ])
             ->add('description', TextareaType::class, [
                 "label" => "Description",
+                "required" => false,
                 'attr' => [
                     'placeholder' => "Essayez d'etre le plus précis possible dans la description de l'animal (Collier, état général, endroit etc...)"
                 ]
             ])
             ->add('sex', ChoiceType::class, [
                 'choices' => [
-                    'Male' => 'Male',
-                    'Femelle' => 'Femelle',
-                    'Je ne sais pas' => 'Je ne sais pas',
+                    'Male' => 'male',
+                    'Femelle' => 'femelle',
+                    'Je ne sais pas' => 'nsp',
                 ],
                 'multiple' => false,
                 "expanded" => true,

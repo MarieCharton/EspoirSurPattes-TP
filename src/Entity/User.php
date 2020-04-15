@@ -5,9 +5,15 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity("email", message =" Adresse mail déja utilisée")
+ * @UniqueEntity("username", message =" Pseudo déja attribué")
  */
 class User implements UserInterface
 {
@@ -19,7 +25,9 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Length(max=180)
+     * @Assert\Email( message = "L'email '{{ value }}' n'est pas un email valide.")
      */
     private $email;
 
@@ -35,7 +43,14 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 100,
+     *      minMessage = "Le pseudo doit contenir minimum {{ limit }} caractères",
+     *      maxMessage = "Le pseudo doit contenir maximum {{ limit }} caractères"
+     * )
      */
+
     private $username;
 
     /**
@@ -53,14 +68,14 @@ class User implements UserInterface
      */
     private $updatedAt;
 
-     //?RELATIONS
+    //?RELATIONS
 
     /**
      * @ORM\OneToMany(targetEntity="Animal", mappedBy="user")
      */
     private $animals;
 
-        /**
+    /**
      * @ORM\OneToMany(targetEntity="Article", mappedBy="user")
      */
     private $articles;
@@ -69,7 +84,7 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
      */
     private $comments;
-    
+
 
     public function __construct()
     {
@@ -159,7 +174,7 @@ class User implements UserInterface
 
     /**
      * Get the value of animals
-     */ 
+     */
     public function getAnimals()
     {
         return $this->animals;
@@ -169,7 +184,7 @@ class User implements UserInterface
      * Set the value of animals
      *
      * @return  self
-     */ 
+     */
     public function setAnimals($animals)
     {
         $this->animals = $animals;
@@ -179,7 +194,7 @@ class User implements UserInterface
 
     /**
      * Get the value of articles
-     */ 
+     */
     public function getArticles()
     {
         return $this->articles;
@@ -189,7 +204,7 @@ class User implements UserInterface
      * Set the value of articles
      *
      * @return  self
-     */ 
+     */
     public function setArticles($articles)
     {
         $this->articles = $articles;
@@ -199,7 +214,7 @@ class User implements UserInterface
 
     /**
      * Get the value of comments
-     */ 
+     */
     public function getComments()
     {
         return $this->comments;
@@ -209,7 +224,7 @@ class User implements UserInterface
      * Set the value of comments
      *
      * @return  self
-     */ 
+     */
     public function setComments($comments)
     {
         $this->comments = $comments;
@@ -235,7 +250,7 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    
+
     public function getRoles()
     {
         // on recupère les roles qui sont en BDD
@@ -252,7 +267,7 @@ class User implements UserInterface
      * Set the value of roles
      *
      * @return  self
-     */ 
+     */
     public function setRoles($roles)
     {
         $this->roles = $roles;

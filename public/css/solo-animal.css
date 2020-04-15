@@ -1,0 +1,79 @@
+.solo-animal {
+  text-align: center;
+}
+
+.solo-animal .animal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: white;
+  border-radius: 20px;
+  padding: 1%;
+}
+
+.solo-animal .img-animal {
+  margin: auto;
+  width: 50%;
+}
+
+.solo-animal .img-animal img {
+  border: 3px solid #24313c;
+  border-radius: 20px;
+  width: 70%;
+}
+
+.solo-animal .info-animal {
+  width: 50%;
+  text-align: left;
+  padding: 5%;
+  font-size: 1.5em;
+}
+
+.solo-animal .contact {
+  font-size: 1.2em;
+}
+
+/******MOBILE*****/
+@media (max-width: 767px) {
+  .solo-animal h1 {
+    font-size: 1.2em;
+  }
+  .solo-animal .animal-content {
+    display: block;
+    font-size: 0.8em;
+    padding: 5%;
+  }
+  .solo-animal .img-animal {
+    width: 90%;
+  }
+  .solo-animal .img-animal img {
+    width: 100%;
+  }
+  .solo-animal .info-animal {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+/******TABLET*****/
+@media (min-width: 768px) and (max-width: 1280px) {
+  .solo-animal .animal-content {
+    display: block;
+    padding: 3%;
+  }
+  .solo-animal .img-animal {
+    width: 90%;
+  }
+  .solo-animal .img-animal img {
+    width: 80%;
+  }
+  .solo-animal .info-animal {
+    text-align: center;
+    width: 90%;
+    font-size: 1.3em;
+  }
+}
+/*# sourceMappingURL=solo-animal.css.map */

@@ -57,7 +57,9 @@
 	</div>
 	{% for article in articles %}
 		<div class=" article">
+			<div class="img-mini">
                 <img src="{{ asset("uploads/" ~ article.image) }}" alt="{{ article.title}}">
+			</div>
 			<div class="detail">
 				{% for category in article.categories %}
                     <a class = "category-btn {{ category.name}} "href="{{ path("articles__by_category",{id: category.id}) }}">{{ category.name|capitalize }}</a></span>
