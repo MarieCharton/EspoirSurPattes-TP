@@ -1,0 +1,21 @@
+.animal-by-filters{
+    .polaroids{
+        // background-color: yellow;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // padding: 20px;
+        
+    }
+    .card{
+        width:20%;
+        margin:1%;
+        background-color: $darkergrey;
+        border-radius:20px;
+
+    }
+    img{
+        border-radius:15px;
+    }
+    
+}

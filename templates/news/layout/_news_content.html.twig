@@ -8,65 +8,64 @@
 
 {% if app.request.get('_route') == 'news' %}
 <div class="article-list">
-	<div class="header-article">
+	<div class="header-article ">
 	<h1><i class="far fa-edit"></i>Tout les articles</h1>
-	{% endif %}
+{% endif %}
 
 		<div class="filter-btn">
-			<p>
-				<i class="fas fa-sort"></i>
-				Filtrer par
-			</p>
-			<label class="dropdown">
-				<div class="dd-button">Date</div>
-				<input type="checkbox" class="dd-input" id="test">
-				<ul class="dd-menu">
-					<li>
-						<a href="">le + récent en premier</a>
-					</li>
-					<li>
-						<a href="">le + ancien en premier</a>
-					</li>
-				</ul>
-			</label>
-			<label class="dropdown">
-				<div class="dd-button">Auteur</div>
-				<input type="checkbox" class="dd-input" id="test">
-				<ul class="dd-menu">
-					<li>
-						<a href="">le + récent en premier</a>
-					</li>
-					<li>
-						<a href="">le + ancien en premier</a>
-					</li>
-				</ul>
-			</label>
-			<label class="dropdown">
-				<div class="dd-button">Popularité</div>
-				<input type="checkbox" class="dd-input" id="test">
-				<ul class="dd-menu">
-					<li>
-						<a href="">les mieux noté en premier</a>
-					</li>
-					<li>
-						<a href="">les moins bien noté en premier</a>
-					</li>
-				</ul>
-			</label>
+		<p><i class="fas fa-sort"></i>Filtrer par</p>
+			<div class="dropdown">
+        		<button class="dropbtn">Date <i class="fas fa-caret-down"></i> </button>
+				<div class="dropdown-content">
+					<a href="{{path("news")}}">le + récent en premier</a>
+					<a href="https://www.google.com/">le + ancien en premier</a>
+				</div>
+    		</div>
+			<div class="dropdown">
+        		<button class="dropbtn">Auteur <i class="fas fa-caret-down"></i> </button>
+				<div class="dropdown-content">
+					{% if authors is defined %}
+					{% for author in authors %}
+					<a href="https://www.google.com/">{{ author.username|capitalize}}</a>
+					{%  endfor %}
+					{% endif %}
+				</div>
+    		</div>
+			<div class="dropdown">
+				<button class="dropbtn">Popularité <i class="fas fa-caret-down"></i> </button>
+				<div class="dropdown-content">
+					<a href="https://www.google.com/">les mieux notés en premier</a>
+					<a href="https://www.google.com/">les moins bien notés en premier</a>
+				</div>
+			</div>
+			{% if app.request.get('_route') == 'news' %}
+			<div class="dropdown">
+				<button class="dropbtn">Catégories <i class="fas fa-caret-down"></i> </button>
+				<div class="dropdown-content">
+				 	{% for category in categories %}
+					<a href="{{ path("articles__by_category",{id: category.id}) }}">{{ category.name|capitalize}}</a>
+					{% endfor %}
+				</div>
+			</div>
+			{% endif %}
 		</div>
 	</div>
+
+
 	{% for article in articles %}
 		<div class=" article">
 			<div class="img-mini">
                 <img src="{{ asset("uploads/" ~ article.image) }}" alt="{{ article.title}}">
 			</div>
 			<div class="detail">
+				<div class="categories">
 				{% for category in article.categories %}
-                    <a class = "category-btn {{ category.name}} "href="{{ path("articles__by_category",{id: category.id}) }}">{{ category.name|capitalize }}</a></span>
-            	{% endfor %}
+				<a class="category-btn {{ category.name}} " href="{{ path("articles__by_category",{id: category.id}) }}">{{ category.name|capitalize }}</a></span>
+				{% endfor %}
+				</div>
 				<h1>{{ article.title|capitalize  }}</h1>
 				<p><i class="far fa-clock"></i> Publié le {{ article.createdAt.date|date("d/m/Y") }}</p>
-				<p> Par <i class="far fa-user"></i> {{ article.user.username }}</p>
+				<p> Par <i class="far fa-user"></i> {{ article.user.username|capitalize }}</p>
 				<p> <i class="far fa-comments"></i>  {{ article.comments|length }} Commentaire(s)</p>
 				<p>{{ article.content |slice(0, 500) }} ... </p>
 

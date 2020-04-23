@@ -1,0 +1,46 @@
+/*=====FOOTER====*/
+
+.footer{
+    background-color: $green;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    h1{
+        color: $darkergrey;
+        font-size: 1.5em;
+    }
+    li{
+        list-style:none;
+    }
+    a{
+        text-decoration: none;
+        color:$darkergrey;
+        &:hover{
+            color:white;
+        }
+    }
+    .trait {
+        border: 2px solid $darkergrey;
+        margin: 0px auto;
+        width :45%;
+    }
+
+    .social{
+       li{
+           display: inline;
+       }
+       .fab{
+           font-size: 3em;
+       }
+    }
+    form {
+        padding-top: 10px;
+        }
+}
+.credits{
+    text-align: center;
+    color :$green;
+    span{
+        color:red;
+    }
+}

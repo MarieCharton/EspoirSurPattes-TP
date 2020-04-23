@@ -1,0 +1,88 @@
+/* HEADER */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Pacifico", cursive;
+  color: #2cb188;
+}
+
+.header a {
+  color: #2cb188;
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
+}
+
+.header a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.header li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.header li a {
+  position: relative;
+  text-decoration: none;
+  color: #2cb188;
+}
+
+.header li a::after {
+  content: '';
+  text-decoration: none;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2cb188;
+  z-index: -1;
+  opacity: 0.8;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.header li a:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.header .nav {
+  font-size: 1.5em;
+}
+
+.header .login {
+  font-size: 1.2em;
+}
+
+.header .login li a {
+  color: white;
+}
+
+.header .login li a::after {
+  background: white;
+}
+
+.header .flashmessage {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  color: #dd6336;
+}
+/*# sourceMappingURL=header.css.map */

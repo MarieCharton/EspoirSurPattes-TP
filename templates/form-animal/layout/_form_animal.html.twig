@@ -1,9 +1,21 @@
 {# {{ form(formAnimal) }} #}
 <div class="form">   
 {{ form_start(formAnimal) }}
+
+    {# Header for update  #}
+    {% if app.request.get('_route') == 'animal_update' %}
+    <div class="form-header">   
+        <h2><i class="fas fa-exclamation-triangle"></i> Modifier le signalement</h2>        
+    </div>
+    {% endif %}
+
+    {# Header for create #}
+    {% if app.request.get('_route') == 'animal_create' %}
     <div class="form-header">   
         <h2><i class="fas fa-exclamation-triangle"></i> Signaler un animal</h2>        
     </div>
+    {% endif %}
+
     <div class="form-content">   
         <p class ="instruction">Renseignements obligatoire *</p>
         <div>

@@ -1,0 +1,31 @@
+<div class="previous-page">
+    <a href="{{path("map")}}"><i class="far fa-arrow-alt-circle-left"></i> Retour a la carte</a>
+</div>
+
+
+<div class="map basic-style-page animal-by-filters">
+    <h1 class="title-top-page"> <i class="fas fa-map-signs"></i> Les signalements du département {{department.name}}</h1>
+    <div class="interligne"></div>
+
+    <div class="polaroids mini">
+    {% for animalByDepartment in animalsByDepartment %}
+        <div class="card ">
+            <div class="card-picture">
+                <img src="{{ asset('uploads/' ~ animalByDepartment.image) }}">
+            </div>
+            <p>{{ animalByDepartment.type.name|capitalize }}
+					{{ animalByDepartment.status }}
+					à
+					{{ animalByDepartment.city|capitalize}}</p>
+            <p><i class="far fa-calendar-check"></i>
+					Le
+					{{ animalByDepartment.createdAt.date|date("d/m/Y") }}</p>
+                <button class"card-button">
+					<a href="{{path("animal_view",{id : animalByDepartment.id})}}">En savoir plus</a>
+				</button>
+        </div>
+    {% endfor %}
+    </div>
+{{ knp_pagination_render(animalsByDepartment) }}
+</div>
+</div>

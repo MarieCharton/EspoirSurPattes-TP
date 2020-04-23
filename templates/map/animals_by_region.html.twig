@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Animaux de la région {{ region.name}} {% endblock %}
+
+{% block body %}
+
+{% include 'include/header.html.twig' %}
+
+{% include 'map/layout/_banner_map.html.twig' %}
+
+{% include 'include/interline-animals.html.twig' %}
+
+{% include 'map/layout/_animals_by_region_content.html.twig' %}
+
+{% include 'include/footer.html.twig' %}
+
+{% endblock %}

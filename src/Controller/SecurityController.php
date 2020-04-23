@@ -11,17 +11,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+        if ($this->getUser()) {
+            // $url = $request->headers->get('referer');
+            // return $this->redirect($url);
+
+            return $this->redirectToRoute('target_path');
+        }
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -52,15 +57,14 @@ class SecurityController extends AbstractController
         $formUser->handleRequest($request);
 
 
-        if ($formUser->isSubmitted() && $formUser->isValid())
-        {
+        if ($formUser->isSubmitted() && $formUser->isValid()) {
 
             $plainPassword = $formUser->get('plain_password')->getData();
-            
+
             $encodedPassword = $encoder->encodePassword($newUser, $plainPassword);
 
             $newUser->setPassword($encodedPassword);
-            
+
             $newUser->setCreatedAt(new DateTime());
 
             $newUser->setRoles(['ROLE_USER']);
@@ -69,14 +73,25 @@ class SecurityController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($newUser);
             $manager->flush();
-            
+
             $this->addFlash('success', 'Votre compte à bien été enregistré.');
             return $this->redirectToRoute('app_login');
         }
 
         return $this->render(
-            "/form-user/create_account.html.twig", [
+            "/form-user/create_account.html.twig",
+            [
                 "formUser" => $formUser->createView()
-            ]);
+            ]
+        );
+    }
+
+    /**
+     * @Route("/admin", name="admin")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function admin()
+    {
+        return $this->render("/admin/admin.html.twig");
     }
 }

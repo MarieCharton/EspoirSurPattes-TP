@@ -1,0 +1,29 @@
+/*=====BANNER====*/
+.banner {
+  width: 100%;
+  height: 500px;
+  background-image: url("../images/banner/homepage.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-color: #f7fbfe;
+  background-size: 60%;
+  border-radius: 20px;
+  opacity: 0.8;
+}
+
+.banner .right-content {
+  width: 50%;
+  height: 100%;
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.banner .banner-content {
+  background-color: blue;
+  width: 40%;
+  margin: auto;
+}
+/*# sourceMappingURL=banner.css.map */

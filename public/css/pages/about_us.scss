@@ -1,0 +1,66 @@
+/*=====SECTION ABOUT US HOMEPAGE ====*/
+
+.about-us{
+    width:100%;
+    height:350px;
+    padding-top: 1px;
+    background-image: url("../images/aboutus/pattes2.png");
+    background-repeat: no-repeat;
+    background-position: 0% 80%;
+    background-color:$darkgrey;
+    color: $darkergrey;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    h1{
+        font-size :1.5em;
+        color: $green;
+    }
+    p{
+        color:#f7fbfe;
+        // text-align: justify;
+        // margin: 10px 120px;
+        margin-left: 15%;
+        margin-right: 5%;
+
+    }
+}
+
+/******MOBILE******/
+
+@media (max-width:767px){
+
+    /*AboutUS*/
+    .about-us{
+        height:30%;
+        padding-top: 1px;
+        background-position: -12% 60%;
+        background-size: 150px;
+        font-size: 1.2em;
+        h1{
+            font-size :1.8em;
+            margin-left: 15%;
+            margin-right: 5%;
+        }
+        p{    
+            margin-left: 25%;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+/******TABLET*****/
+@media (min-width:768px)and (max-width:1280px){
+
+    /*AboutUS*/
+    .about-us{
+        height:600px;
+        background-position: 0% 60%;
+        background-size: 180px;
+        font-size: 1.4em;
+        p{    
+            margin-left: 25%;
+            padding-bottom: 20px;
+        }
+    }
+}

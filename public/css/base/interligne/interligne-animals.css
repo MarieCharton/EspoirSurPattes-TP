@@ -1,0 +1,21 @@
+/*Interligne Animaux */
+.animals {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-size: 2em;
+  color: #2cb188;
+}
+
+.animals .line {
+  border: 2px solid #2cb188;
+  margin: auto;
+  width: 45%;
+}
+
+.animals .fas {
+  padding: 2px;
+}
+/*# sourceMappingURL=interligne-animals.css.map */

@@ -1,0 +1,17 @@
+/*=====INTERLIGNE ANIMAUX====*/
+
+.animals{
+    margin: 20px auto;
+    display: flex;
+    text-align: center;
+    font-size: 2em;
+    color: $green;
+    .line {
+        border: 2px solid $green;
+        margin: auto;
+        width :45%;
+    }
+    .fas{
+        padding:2px;
+    }
+}

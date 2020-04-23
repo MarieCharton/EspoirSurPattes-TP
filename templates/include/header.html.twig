@@ -1,46 +1,77 @@
 <header>
-    <div class="header">
-        <h1 class="logo">
-        <a href="{{ path('homepage') }}">
-        <i class="fas fa-home"></i> Espoir sur Pattes <i class="fas fa-paw"></i>
-        </a>
-        <a id = "homeButton" class="button"><i class="fas fa-bars"></i></a></h1>
+	<div class="header">
+		<h1 class="logo">
+			<a href="{{ path('homepage') }}">
+				<i class="fas fa-home"></i> Espoir sur Pattes <i class="fas fa-paw"></i>
+			</a>
+			<a id="homeButton" class="button">
+				<i class="fas fa-bars"></i>
+			</a>
+		</h1>
 
-        <div class="flashmessage">
-            {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-            {% endfor %}
-        </div>
 
-        <div id="responsive-nav" class="closeMenu">
-            <div class="nav links">
-                <nav>
-                    <li><a href="{{ path("map") }}">Carte</a></li>
-                    <li><a href="{{ path("news") }}">News</a></li>
-                    <li><a href="{{ path("contact") }}">Contact</a></li>
-                    <li><a href="">Associations</a></li>
-                </nav>
-            </div>
-            <div class="nav login">
-                {% if app.user == false %}
-                <nav>
-                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                    <li><a href="{{ path('create_account') }}">Inscription</a></li>
-                </nav>
-                {% endif %}
-                 {% if app.user %}
-                <nav>
-                    <li><a href="">Bienvenue {{app.user.username|capitalize}} <i class="far fa-smile"></i></a></li>
-                    <li><a href="{{ path('app_logout') }}" onclick="return confirm('Confirmez la déconnexion ?')"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
-                </nav>
-                {% endif %}
+		{% for message in app.flashes('success') %}
+		<div id="flashmessage">
+				<div class="alert alert-success">
+				 <i class="fas fa-check-square"></i> {{ message }} 
+				</div>
+		</div>
+		{% endfor %}
+		
+		{# {% if is_granted('ROLE_ADMIN') %}
+		<div class="admin">
+			<a href="{{ path("admin") }}"> <i class="fas fa-user-lock"></i> Espace administration</a>
+		</div>
+		{% endif %} #}
 
-            </div>
-        </div>
-    </div>
+		<div id="responsive-nav" class="closeMenu">
+			<div class="nav links">
+				<nav>
+					<li>
+						<a href="{{ path("map") }}">Carte</a>
+					</li>
+					<li>
+						<a href="{{ path("news") }}">News</a>
+					</li>
+					<li>
+						<a href="{{ path("contact") }}">Contact</a>
+					</li>
+					<li>
+						<a href="">Associations</a>
+					</li>
+				</nav>
+			</div>
+			<div class="nav login">
+				{% if app.user == false %}
+					<nav>
+						<li>
+							<a href="{{ path('app_login') }}">Connexion</a>
+						</li>
+						<li>
+							<a href="{{ path('create_account') }}">Inscription</a>
+						</li>
+					</nav>
+				{% endif %}
+				{% if app.user %}
+					<nav>
+						<li>
+							<a href="">Bienvenue
+								{{app.user.username|capitalize}}
+								<i class="far fa-smile"></i>
+							</a>
+						</li>
+						<li>
+							<a href="{{ path('app_logout') }}" onclick="return confirm('Confirmez la déconnexion ?')">
+								<i class="fas fa-sign-out-alt"></i>
+								Déconnexion</a>
+						</li>
+					</nav>
+				{% endif %}
+
+			</div>
+		</div>
+        
+	</div>
 </header>
-
 <body>
-    <main>
+	<main>

@@ -1,0 +1,61 @@
+/*===== SECTION ====*/
+.section{
+    width:100%;
+    height:700px;
+    padding-top: 1px;
+    background-color: $darkgrey;
+    border-radius: 20px;
+    text-align: center;
+
+    .intro-card{
+
+        display: flex;
+        justify-content: center;
+        font-size :1em;
+        h1{
+            color: $green;
+        }
+        .card-access{
+            color:$green;
+            background-color: $darkgrey;
+            border: 1px solid $green;   
+            margin:auto 100px;
+            padding: 10px;
+            border-radius: 10px;
+            transition:800ms ease all;
+            outline:none;
+            font-size: 1.3em;
+            &:hover{
+                color: white;
+                border: 1px solid white;   
+            }
+      
+        }
+    }
+
+    .owl-nav{
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 10px;
+
+        .owl-prev {
+        color: $green;
+        font-size: 1em;
+        transition:800ms ease all;
+        background: #11ffee00;
+
+
+            &:hover{
+                color :$green;
+            } 
+        }   
+        .owl-next {
+        @extend .owl-prev;
+
+        }
+    }
+    .owl-theme .owl-controls .owl-page {
+        display: inline-block;
+    }
+
+}

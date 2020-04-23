@@ -1,0 +1,24 @@
+.admin .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin .content .choice {
+  background-color: yellow;
+  width: 30%;
+}
+
+.admin .content .choice ul {
+  list-style: none;
+}
+
+.admin .content .array {
+  background-color: lightpink;
+  width: 70%;
+}
+
+.admin .content .array table {
+  width: 100%;
+}
+/*# sourceMappingURL=admin.css.map */

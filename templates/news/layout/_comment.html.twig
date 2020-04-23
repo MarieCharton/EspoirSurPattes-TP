@@ -19,7 +19,7 @@
 					<p>"{{comment.content|capitalize}}"</p>
 				</div>
 				<div class="interaction">
-					<a title='Signaler' href=""><p><i class="fas fa-exclamation"></i></p></a>
+					<a title='Signaler' href="{{path ("comment_signal", {id: comment.id})}}"><p><i class="fas fa-exclamation"></i></p></a>
 					{% if is_granted('ROLE_USER') %}
 					{% if is_granted ('update', comment) %}
 					<a title='Modifier' href="{{path ("comment_update", {id: comment.id})}}"><p><i class="fas fa-pen-nib"></i></p></a>
@@ -33,7 +33,7 @@
 		</div>
 	{% endfor %}
 	{% if app.user == false %}
-		<p class="bottom-link">Pour réagir a cet article<a href="{{ path ('create_account') }}">Inscrivez vous</a>
+		<p class="bottom-link">Pour réagir a cet article <a href="{{ path ('create_account') }}"> Inscrivez vous </a>
 		ou
 		<a href="{{ path ('app_login') }}">Connectez vous</a></p>
 	{% endif %}

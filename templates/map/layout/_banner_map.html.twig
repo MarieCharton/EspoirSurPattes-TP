@@ -1,14 +1,25 @@
 <!-- start Banner -->
 <div class="banner-map">
-    <div class="empty"></div>
-    <div class="bannertext">
-        <h1>Vous avez perdu ou trouvé un animal?</h1>
-        {% if app.user == false %}
-        <a class="btn" href="{{ path('create_account') }}">S'incrire pour faire un signalement</a>
-        {% endif %}
-        {% if app.user %}
-         <a class="btn" href="{{path("animal_create")}}">Faire un signalement</a>
-        {% endif %}
-    </div>
+<div class="right-content">
+	<div class="banner-content">
+		<h2>Vous avez perdu ou trouvé un animal ?</h2>
+        <div class="banner-btn">
+            {% if app.user == false %}
+            <a href="{{ path('create_account') }}">
+                <button class="btn" type="button">
+                    S'inscrire pour faire un signalement
+                </button>
+            </a>
+            {% endif %}
+            {% if app.user %}
+            <a href="{{ path('animal_create') }}">
+                <button class="btn" type="button">
+                    Faire un signalement
+                </button>
+            </a>
+            {% endif %}
+        </div>
+	</div>
+</div>
 </div>
 <!-- End banner  -->

@@ -1,0 +1,23 @@
+.admin{
+    .content{
+
+        display: flex;
+        .choice{
+            background-color: yellow;
+            width: 30%;
+            ul{
+
+                list-style: none;
+            }
+        }
+        .array{
+            background-color: lightpink;
+            width: 70%;
+            table{
+                width: 100%;
+            }
+
+        }
+    }
+
+    }

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,uBAAuB;AACvB,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,SAAS;EACjB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,GAAG;EACd,KAAK,ECRA,OAAO;CDiBf;;AAdD,AAMI,QANI,CAMJ,KAAK,CAAC;EACF,MAAM,EAAE,GAAG,CAAC,KAAK,CCVhB,OAAO;EDWR,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,GAAG;CACb;;AAVL,AAWI,QAXI,CAWJ,IAAI,CAAA;EACA,OAAO,EAAC,GAAG;CACd",
+    "sources": [
+        "interligne-animals.scss",
+        "style/basic-style.scss"
+    ],
+    "names": [],
+    "file": "interligne-animals.css"
+}

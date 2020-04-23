@@ -146,22 +146,6 @@ $(document).ready(function(){
 
 /*lIGHTBOx*/ 
 
-/*
- * Name: Dead simple lightbox
- * URL: http://kozmaflorin.com/demo/lightbox/
- * Author: Kozma Florin
- * Author URI: http://kozmaflorin.com
- * Description: Dead simple lightbox tries to keep the concept simple enough for implementation of for further development.
- * Version: 1.0
- * License: General Public License
- * License URI: http://www.gnu.org/licenses/gpl.html
- *
- * Additional info: This template uses boostrap for the grid system.
- * Usage: Add the id #deadSimpleLightbox in whatever HTML element,
- * and the script will automatically take every image from that parent id and display it in a lightbox (when clicked).
- * Note: If you add alt attributes to the images, it will be shown as a caption below the image
- */
-
 
 // Set up HTML elements into variables
 var $overlay	= $('<div id="lightboxOverlay"></div>');
@@ -195,3 +179,15 @@ $('#deadSimpleLightbox img').click(function(){
 $close.click( function() {
 	$overlay.fadeOut('1000');
 } );
+
+
+
+// HIDE FLASH MESSAGE AFTER 10 SECONDS 
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $("#flashmessage").hide();}, 10000);
+});
+
+//Style of like BUtton 
+document.getElementById("counter_Voter").innerHTML = "👍";

@@ -1,4 +1,5 @@
 <!-- Start Article Section -->
+
 <div class="section">
 	<div class="intro-card">
 		<h1><i class="fas fa-pen-alt"></i> Les derniers articles publiés</h1>
@@ -10,8 +11,8 @@
 				<div class="card-picture">
 					<img src="{{ asset('uploads/' ~ article.image) }}" alt=""/>
 				</div>
-				<p>{{ article.title }}</p>
-				<p>coucou</p>
+				<p>{{ article.title|capitalize }}</p>
+				<p>{{ article.content |slice(0, 70) }} ... </p>
 				<button class"card-button">
 					<a href="{{path("article_view",{slug : article.slug})}}">Lire l'article</a>
 				</button>

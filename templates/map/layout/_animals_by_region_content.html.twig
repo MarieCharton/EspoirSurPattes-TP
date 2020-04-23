@@ -1,0 +1,39 @@
+<div class="previous-page">
+    <a href="{{path("map")}}"><i class="far fa-arrow-alt-circle-left"></i> Retour a la carte</a>
+</div>
+
+
+<div class="map basic-style-page animal-by-filters">
+    <h1 class="title-top-page"> <i class="fas fa-map-signs"></i> Les signalements dans la région {{region.name}}</h1>
+    <div class="interligne"></div>
+    <p> <i class="fas fa-search"></i> Filtrer par départements</p>
+    <div class="dropdown">
+        <button class="dropbtn">Départements <i class="fas fa-caret-down"></i> </button>
+        <div class="dropdown-content">
+        {% for department in region.departments %}
+            <a href="{{path("animal_by_department",{id: department.id})}}">{{department.name}}</a>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="polaroids mini">
+    {% for animalByRegion in animalsByRegion %}
+        <div class="card ">
+            <div class="card-picture">
+                <img src="{{ asset('uploads/' ~ animalByRegion.image) }}">
+            </div>
+            <p>{{ animalByRegion.type.name|capitalize }}
+					{{ animalByRegion.status }}
+					à
+					{{ animalByRegion.city|capitalize}} ({{animalByRegion.department.name}})</p>
+            <p><i class="far fa-calendar-check"></i>
+					Le
+					{{ animalByRegion.createdAt.date|date("d/m/Y") }}</p>
+                <button class"card-button">
+					<a href="{{path("animal_view",{id : animalByRegion.id})}}">En savoir plus</a>
+				</button>
+        </div>
+    {% endfor %}
+    </div>
+{{ knp_pagination_render(animalsByRegion) }}
+</div>
+</div>

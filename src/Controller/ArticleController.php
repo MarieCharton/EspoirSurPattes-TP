@@ -5,19 +5,22 @@ namespace App\Controller;
 use DateTime;
 use App\Entity\Article;
 use App\Entity\Comment;
+use App\Entity\Counter;
 use App\Entity\Category;
-use App\Form\AnimalType;
 use App\Form\ArticleType;
 use App\Form\CommentType;
+use App\Form\CounterType;
 use App\Services\Slugger;
 use App\Services\ImageUploader;
+use Symfony\Component\Mime\Email;
 use App\Repository\AnimalRepository;
 use App\Repository\ArticleRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/article")
@@ -89,6 +92,12 @@ class ArticleController extends AbstractController
             $slug = $slugger->slugify($article->getTitle());
             $article->setSlug($slug);
 
+            //create Counter 
+            $counter = new Counter;
+            $counter->setNumberOfLike(0);
+            $article ->setLikeCounter($counter);
+
+
             //Set the date automatically
             $article->setCreatedAt(new DateTime());
 
@@ -119,8 +128,27 @@ class ArticleController extends AbstractController
     {
 
         $slug = $article->getSlug();
-
         $comments = $article->getComments();
+
+        $counter = $article->getLikeCounter();
+        
+        $formCounter = $this->createForm(CounterType::class, $counter);
+        $formCounter->handleRequest($request);
+        
+        if ($formCounter->isSubmitted() && $formCounter->isValid()) {
+            
+            $numberOfLikes = $counter->getNumberOfLike();
+            $numberOfLikes =  $numberOfLikes + 1 ; 
+            $counter ->setNumberOfLike($numberOfLikes);
+
+            $manager = $this->getDoctrine()->getManager();
+
+            $manager->flush();
+            $this->addFlash('success', "Merci pour votre vote");
+
+        }
+        
+        
 
         //* C *//
         $newComment = new Comment();
@@ -153,7 +181,8 @@ class ArticleController extends AbstractController
             [
                 "article" => $article,
                 "comments" => $comments,
-                "formComment" => $formComment->createView()
+                "formComment" => $formComment->createView(),
+                "formCounter" => $formCounter->createView()
             ]
         );
     }
@@ -168,7 +197,6 @@ class ArticleController extends AbstractController
     {
         $slug = $article->getSlug();
         $image = $article->getImage();
-        dump($image);
 
         $this->denyAccessUnlessGranted('update', $article);
 
@@ -224,6 +252,38 @@ class ArticleController extends AbstractController
         return $this->redirectToRoute('news');
     }
 
+    //? SIGNAL
+    /**
+     * @Route ("/signal/{id}",name ="article_signal")
+     * @IsGranted("ROLE_USER")
+     */
+    public function signalArticle(Article $article, MailerInterface $mailer)
+    {
+        $slug = $article->getSlug();
+
+        $articleContent = $article->getContent();
+        $userWhoWroteArticle = $article->getUser()->getUserName();
+        $user = $this->getUser();
+        $userWhoSignal = $user->getUsername();
+        dump($userWhoSignal);
+
+        $email = (new Email())
+            ->from('contact.espoirsurpattes@gmail.com')
+            ->to('contact.espoirsurpattes@gmail.com')
+            ->subject('Important Espoir sur Pattes Article signalé')
+            ->html(
+                '<h2>Contenu de l\'article signalé :</h2><p>' . $articleContent . '</p>
+                <p>Article écrit par : ' . $userWhoWroteArticle .  '</p>
+                <p> Signalé par  : ' . $userWhoSignal . '</p>'
+
+            );
+
+        $mailer->send($email);
+
+        $this->addFlash('success', "L'article a bien été signalé");
+        return $this->redirectToRoute('article_view', ['slug' => $slug]);
+    }
+
     //** COMMENT */
     //* U *//
     /**
@@ -234,7 +294,7 @@ class ArticleController extends AbstractController
     {
 
         // Voters to deny update access in the URL 
-        // $this->denyAccessUnlessGranted('delete', $comment);
+        $this->denyAccessUnlessGranted('update', $comment);
 
         $article = $comment->getArticle();
 
@@ -271,18 +331,51 @@ class ArticleController extends AbstractController
      * @Route ("/delete/comment/{id}",name ="comment_delete")
      * @IsGranted("ROLE_USER")
      */
-    public function deleteComment($id, Comment $comment)
+    public function deleteComment( Comment $comment)
     {
         // Voters to deny delete access in the URL 
-        // $this->denyAccessUnlessGranted('delete', $comment);
+        $this->denyAccessUnlessGranted('delete', $comment);
 
-        $slug = $comment->getArticle()->getSlug();
+        $article = $comment->getArticle();
+        $slug = $article->getSlug();
 
         $this->getDoctrine()->getManager()->remove($comment);
         $this->getDoctrine()->getManager()->flush();
 
         $this->addFlash('success', "Le commentaire a bien été supprimé");
 
+        return $this->redirectToRoute('article_view', ['slug' => $slug]);
+    }
+
+    //* SIGNAL COMMENT
+    /**
+     * @Route ("/signal/comment/{id}",name ="comment_signal")
+     * @IsGranted("ROLE_USER")
+     */
+    public function signalComment(Comment $comment, MailerInterface $mailer)
+    {
+
+        $article = $comment->getArticle();
+        $slug = $article->getSlug();
+        $commentContent = $comment->getContent();
+        $userWhoWroteComment = $comment->getUser()->getUserName();
+        $user = $this->getUser();
+        $userWhoSignal = $user->getUsername();
+
+        $email = (new Email())
+            ->from('contact.espoirsurpattes@gmail.com')
+            ->to('contact.espoirsurpattes@gmail.com')
+            ->subject('Important Espoir sur Pattes Commenataire signalé')
+            ->html(
+                '<h2>Contenu du commentaire signalé :</h2><p>' . $commentContent . '</p>
+                <p>Commentaire écrit par : ' . $userWhoWroteComment .  '</p>
+                <p> Signalé par  : ' . $userWhoSignal . '</p>'
+
+            );
+
+        $mailer->send($email);
+
+        $this->addFlash('success', "Le commentaire a bien été signalé");
         return $this->redirectToRoute('article_view', ['slug' => $slug]);
     }
 }

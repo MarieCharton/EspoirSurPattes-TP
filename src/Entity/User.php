@@ -85,12 +85,19 @@ class User implements UserInterface
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="userVotes")
+     */
+    private $votes;
+
 
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->animals = new ArrayCollection();
+        $this->votes = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -271,6 +278,26 @@ class User implements UserInterface
     public function setRoles($roles)
     {
         $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of votes
+     */ 
+    public function getVotes()
+    {
+        return $this->votes;
+    }
+
+    /**
+     * Set the value of votes
+     *
+     * @return  self
+     */ 
+    public function setVotes($votes)
+    {
+        $this->votes = $votes;
 
         return $this;
     }

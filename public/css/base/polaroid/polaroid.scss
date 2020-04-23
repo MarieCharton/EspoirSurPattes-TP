@@ -1,0 +1,107 @@
+/*=====POLAROIDS====*/
+
+
+.polaroids {
+
+  .card {
+    background: white;
+    padding: 10px 10px 10px 10px;
+    display: inline-block;
+    text-decoration: none;
+    width: 90%;
+    color: $darkergrey;
+    border-radius: 10px;
+    
+    p{
+      font-size: 1.2em;
+    }
+    .card-picture{
+      overflow:hidden;
+      display: flex;
+  
+      img{
+        width:400px;
+        height:400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+      }
+    }
+  /* Animation Button*/
+    button{
+
+      background:$green;
+      border:none;
+      position:relative;
+      height:30px;
+      font-size:1.2em;
+      padding:0 2em;
+      border-radius: 5px;
+      cursor:pointer;
+      transition:800ms ease all;
+      outline:none;
+      a{
+        color: white;
+
+      }
+    }
+    button:hover{
+      background:white;
+      color:$green;
+      a{
+        color: $green;
+
+      }
+    }
+    button:before,button:after{
+      content:'';
+      position:absolute;
+      color: white;
+      top:0;
+      right:0;
+      height:2px;
+      width:0;
+      background: $green;
+      transition:400ms ease all;
+    }
+    button:after{
+      right:inherit;
+      top:inherit;
+      left:0;
+      bottom:0;
+    }
+    button:hover:before,button:hover:after{
+      width:100%;
+      transition:800ms ease all;
+    }
+    
+
+  }
+}
+
+
+
+
+
+
+
+
+@media (max-width:767px){
+
+  // .polaroids {
+  //   .card {
+  //     padding: 10px 10px 10px 10px;
+  //     display: inline-block;
+  //     text-decoration: none;
+  //     margin: auto 12px;
+  //     width: 80%;
+  //     color: #8B8B8B;
+  //     border-radius: 10px;
+
+  //   }
+  // }
+}
+
+@media (min-width:768px)and (max-width:1280px){
+
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,kBADc,CACd,UAAU,CAAA;EACN,gBAAgB,EAAE,MAAM;EACxB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,MAAM;CAG1B;;AARL,AAaI,kBAbc,CAad,KAAK,CAAA;EACD,KAAK,EAAC,GAAG;EACT,MAAM,EAAC,EAAE;EACT,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "animal_with_filters.scss"
+    ],
+    "names": [],
+    "file": "animal_with_filters.css"
+}

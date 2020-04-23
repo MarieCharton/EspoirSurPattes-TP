@@ -50,6 +50,17 @@
             {% endif %}
 
         </div>
+        <div class="interaction">
+			<a title='Signaler' href=""><p><i class="fas fa-exclamation"></i> </p></a>
+			{% if is_granted('ROLE_USER') %}
+			{% if is_granted ('update', animal) %}
+			<a title='Modifier' href="{{path("animal_update",{id: animal.id})}}"><p><i class="fas fa-pen-nib"></i> </p></a>
+			{% endif %}
+			{% if is_granted ('delete', animal) %}
+			<a title='Supprimer' href="{{path("animal_delete",{id: animal.id})}}" onclick="return confirm('Confirmez la suppression ?')"><p><i class="fas fa-trash-alt"></i> </p></a>
+			{% endif %}
+			{% endif %}
+		</div>
     </div>
     <div class="contact">
         <p><i class="fas fa-binoculars"></i>  Cet animal a été signalé par {{animal.user.username}} </p>

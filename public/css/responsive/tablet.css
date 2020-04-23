@@ -1,0 +1,39 @@
+/******TABLET*****/
+@media (min-width: 768px) and (max-width: 1280px) {
+  /*AnimalSection*/
+  .animal-section {
+    height: 500px;
+    font-size: 1.2em;
+  }
+  /*ArticleSection*/
+  .article-section {
+    height: 500px;
+    font-size: 1.2em;
+  }
+  /*FORMULAIRES*/
+  .form {
+    width: 80%;
+  }
+  .form #animal_type {
+    width: 50%;
+  }
+  .form input {
+    height: 35px;
+    width: 80%;
+  }
+  .form div#animal_identification input {
+    height: 15px;
+    width: 20px;
+  }
+  .form button#animal_envoyer {
+    width: 40%;
+  }
+  .form textarea {
+    height: 200px;
+    width: 80%;
+  }
+  .form .column {
+    height: 100px;
+  }
+}
+/*# sourceMappingURL=tablet.css.map */
