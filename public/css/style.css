@@ -44,7 +44,7 @@
     z-index: 8;
     width: 100%; }
     .header .logo {
-      font-size: 1.4em;
+      font-size: 1.7em;
       margin: 0px; }
     .header .button {
       font-size: 1.2em;
@@ -1029,12 +1029,7 @@
     background-position: -12% 60%;
     background-size: 150px;
     font-size: 1.2em; }
-    .about-us h1 {
-      font-size: 1.8em;
-      margin-left: 15%;
-      margin-right: 5%; }
     .about-us p {
-      margin-left: 25%;
       padding-bottom: 20px; } }
 /******TABLET*****/
 @media (min-width: 768px) and (max-width: 1280px) {
