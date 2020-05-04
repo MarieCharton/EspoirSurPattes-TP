@@ -168,12 +168,13 @@
 @media (max-width: 767px) {
   .banner, .banner-homepage, .banner-map, .banner-contact, .banner-news {
     width: 100%;
-    height: 350px;
+    height: 450px;
     /*=====BOUTON====*/ }
     .banner h2, .banner-homepage h2, .banner-map h2, .banner-contact h2, .banner-news h2 {
       font-size: 1em; }
     .banner .right-content, .banner-homepage .right-content, .banner-map .right-content, .banner-contact .right-content, .banner-news .right-content {
-      width: 100%; }
+      width: 100%;
+      height: 70%; }
     .banner .banner-content, .banner-homepage .banner-content, .banner-map .banner-content, .banner-contact .banner-content, .banner-news .banner-content {
       padding: 0px;
       height: 45%;
