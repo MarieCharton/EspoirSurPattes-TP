@@ -64,13 +64,14 @@
     </div>
     <div class="contact">
         <p><i class="fas fa-binoculars"></i>  Cet animal a été signalé par {{animal.user.username}} </p>
+        <p> Signalement N° {{animal.id}}</p>
 
-             {% if animal.status == "trouvé" or animal.status == "aperçu" %}
-                <p>C'est votre animal ? <a href="">Contactez nous vite ! </a></p>
-            {% endif  %}
-             {% if animal.status == "perdu" %}
-                <p> Vous avez receuilli ou aperçu cet animal ? <a href=""> Contactez nous vite ! </a></p>
-            {% endif  %}
+        {% if animal.status == "trouvé" or animal.status == "aperçu" %}
+        <p>C'est votre animal ? <a href="{{path("contact")}}">Contactez nous vite ! </a></p>
+        {% endif  %}
+        {% if animal.status == "perdu" %}
+        <p> Vous avez receuilli ou aperçu cet animal ? <a href="{{path("contact")}}"> Contactez nous vite ! </a></p>
+        {% endif  %}
 
     </div>
 </div>

@@ -33,7 +33,7 @@
 				<p> <i class="far fa-comments"></i>  {{ article.comments|length }} Commentaire(s)</p>
 				<p>{{ article.content}}</p>
 				
-				<div class="rating">
+				{# <div class="rating">
 					<p>Vous avez aimé cet article ?
 					{% if app.user %} 
 					Encourager son auteur : {{ form(formCounter) }}  </p>
@@ -41,8 +41,9 @@
 					{% if app.user == false %} 
 					Pour l'encourager <a href="{{ path ('create_account') }}"> Inscrivez vous ici </a></p>
 					{% endif %}
-					{# <p class = "like" >{{ article.likeCounter.numberOfLike}} <i class="fas fa-heart"></i></p> #}
-				</div>
+					<p class = "like" >{{ article.likeCounter.numberOfLike}} <i class="fas fa-heart"></i></p>
+				</div> #}
+				
 				{% if article.updatedAt is not null and article.updatedAt is defined %}
 				<p><small>   Cet article a été mis a jour le {{ article.updatedAt.date|date("d/m/Y") }} </small> </p>
 				{% endif %}

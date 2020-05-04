@@ -12,13 +12,19 @@
 		{% block stylesheets %}
         
         {# CSS  #}
-        <link rel="stylesheet" href="{{ asset("/css/style.css") }}" />
-        <link rel="stylesheet" href="{{ asset("/css/owl-carousel/owl.carousel.min.css") }}" />
-        <link rel="stylesheet" href="{{ asset("/css/owl-carousel/owl.theme.default.min.css") }}" />
+        {# Liens relatifs #}
+        {# <link rel="stylesheet" href="../public/css/style.css" />
+        <link rel="stylesheet" href="../public/css/owl-carousel/owl.carousel.min.css" />
+        <link rel="stylesheet" href="../public/css/owl-carousel/owl.theme.default.min.css" /> #}
+
+        {# Liens absolus  #}
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/owl-carousel/owl.carousel.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/owl-carousel/owl.theme.default.min.css') }}" rel="stylesheet"/>
+
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
 
         {# FONTS #}
-        {# <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> #}
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
         
