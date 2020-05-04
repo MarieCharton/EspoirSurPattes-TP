@@ -68,10 +68,6 @@ class MainController extends AbstractController
     {
         $regions = $regionRepository->findAll();
 
-        $url = $request->headers->get('referer');
-
-        dump($url);
-
         return $this->render('map/map.html.twig',[
             "regions"=>$regions
         ]);
