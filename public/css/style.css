@@ -189,6 +189,8 @@
   .banner-map {
     background-size: 100%;
     background-position: 0% -75%; }
+    .banner-map .banner-content {
+      height: 30%; }
 
   .banner-contact {
     background-size: 170%; }
@@ -196,7 +198,9 @@
   .banner-news {
     background-size: 142%;
     background-position: 100% 475%;
-    background-color: #2a1d24; } }
+    background-color: #2a1d24; }
+    .banner-news .banner-content {
+      height: 30%; } }
 /******TABLET*****/
 /*=====INTERLIGNE ANIMAUX====*/
 .animals {

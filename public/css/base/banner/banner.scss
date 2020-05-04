@@ -180,6 +180,9 @@
     .banner-map{
         background-size: 100%;
         background-position: 0% -75%;
+        .banner-content{
+            height: 30%;
+        }
     }
     .banner-contact{
         background-size: 170%;
@@ -189,6 +192,9 @@
         background-size: 142%;
         background-position: 100% 475%;
         background-color: #2a1d24;
+        .banner-content{
+            height: 30%;
+        }
     }
 
 }
