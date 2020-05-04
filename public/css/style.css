@@ -47,8 +47,8 @@
       font-size: 1.7em;
       margin: 0px; }
     .header .button {
-      font-size: 1.2em;
-      margin-left: 30px; }
+      font-size: 1em;
+      margin-left: 15px; }
     .header .links {
       font-size: 1.2em; }
       .header .links li {
@@ -184,7 +184,19 @@
       margin: 10px; }
 
   .banner-homepage {
-    background-size: 95%; } }
+    background-size: 95%; }
+
+  .banner-map {
+    background-size: 100%;
+    background-position: 0% -75%; }
+
+  .banner-contact {
+    background-size: 170%; }
+
+  .banner-news {
+    background-size: 142%;
+    background-position: 100% 475%;
+    background-color: #2a1d24; } }
 /******TABLET*****/
 /*=====INTERLIGNE ANIMAUX====*/
 .animals {
@@ -452,6 +464,15 @@
     color: #2cb188;
     letter-spacing: 1.2px; }
 
+/******MOBILE******/
+@media (max-width: 767px) {
+  .contact-page .intro {
+    width: 95%; }
+  .contact-page .form-group input, .contact-page .form-group textarea, .contact-page .form-group .form .column, .form .contact-page .form-group .column {
+    width: 90%; }
+  .contact-page button.send-mail {
+    width: 60%; } }
+/******TABLET*****/
 /*=====PAGE NEWS====*/
 .category-list .card {
   height: 450px;
@@ -615,6 +636,9 @@
     text-align: center; }
     .article-list .read-more, .solo-animal .read-more, .solo-article .read-more, .bloc-comment .read-more {
       margin: 17px auto 0px auto; }
+
+  .header-article {
+    font-size: 0.8em; }
 
   .article {
     width: 100%;

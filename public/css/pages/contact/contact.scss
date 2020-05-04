@@ -54,3 +54,26 @@
 
     }
 }
+
+/******MOBILE******/
+
+@media (max-width:767px){
+    .contact-page{
+        .intro{   
+            width:95%;
+        }
+        .form-group{
+            input{
+                width:90%;        
+            }
+        }
+        button.send-mail{
+            width: 60%;
+        }
+    }
+}
+
+
+/******TABLET*****/
+@media (min-width:768px)and (max-width:1280px){
+}
