@@ -44,40 +44,4 @@
         }
     }
   
-    /*FORMULAIRES*/
-
-    .form{
-        width:90%;
-        .form-header{
-            font-size: 0.8em;
-        }
-
-        #animal_type{
-            width: 50%;
-        }
-    
-        input{
-            height: 35px;
-            width:90%;
-            font-size: 0.8em;
-        }
-        div#animal_identification{
-            input{
-                height: 15px;
-                width:20px;
-            }
-        }
-
-        button#animal_envoyer{
-            width:40%;
-        }
-        
-        textarea {
-            height: 200px;
-            width:80%;
-        }
-        .column{
-            height: 130px;
-        }
-    }
 }

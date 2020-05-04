@@ -140,13 +140,12 @@
 }
 
 /******MOBILE******/
-
 @media (max-width:767px){
     .banner{
         width: 100%;
         height:450px;
         h2{
-            font-size: 1em;
+            font-size: 1.2em;
         }
         .right-content{
             width: 100%;
@@ -154,7 +153,6 @@
 
         }
         .banner-content{
-
             padding: 0px;
             height: 45%;
             width:90%;
@@ -163,12 +161,9 @@
     
         /*=====BOUTON====*/
         .banner-btn{
-
             button{
-
                 font-size:0.8em;
                 margin: 10px;
-    
             }
         }
             

@@ -144,5 +144,49 @@ a.connexion{
             padding-right: 10px;
         }
     }
+}
+
+/******MOBILE******/
+
+@media (max-width:767px){
+    .form{
+        width:90%;
+
+        .form-header{
+            font-size: 0.8em;
+        }
+        input{
+            height: 35px;
+            width:90%;
+            font-size: 0.8em;
+        }
+
+        #animal_type{
+            font-size :0.8em;
+            width: 50%;
+        }
+        textarea {
+            font-size: 0.8em;
+        }
+        .column{
+            height: 100px;
+        }
+        button#animal_envoyer{
+            font-family: $font;
+            width:40%;
+        }
+        textarea {
+            width:80%;
+        }
+    }
+    div#animal_identification{
+      display: flex;
+      justify-content: center;
+    }
+}
+
+
+/******TABLET*****/
+@media (min-width:768px)and (max-width:1280px){
 
 }
