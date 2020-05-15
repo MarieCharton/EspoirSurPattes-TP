@@ -222,6 +222,7 @@
   padding: 10px 10px 10px 10px;
   display: inline-block;
   text-decoration: none;
+  height: 510px;
   width: 90%;
   color: #24313c;
   border-radius: 10px;
@@ -232,8 +233,7 @@
     overflow: hidden;
     display: flex; }
     .polaroids .card .card-picture img {
-      width: 400px;
-      height: 400px;
+      width: 100%;
       display: block;
       margin-left: auto;
       margin-right: auto; }

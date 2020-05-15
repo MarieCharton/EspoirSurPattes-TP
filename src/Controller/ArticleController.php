@@ -57,7 +57,7 @@ class ArticleController extends AbstractController
 
 
     // !CRUD // 
-    //? C //
+    //? Create //
     /**
      * @Route("/create", name="article_create")
      * @IsGranted("ROLE_USER")
@@ -120,7 +120,7 @@ class ArticleController extends AbstractController
         );
     }
 
-    //? R //( including CR for comments )
+    //? Read //( including CR for comments )
     /**
      * @Route("/{slug}/view", name="article_view")
      */
@@ -188,7 +188,7 @@ class ArticleController extends AbstractController
     }
 
 
-    //? U //
+    //? Update //
     /**
      * @Route ("/updade/{id}",name ="article_update")
      * @IsGranted("ROLE_USER")
@@ -235,7 +235,7 @@ class ArticleController extends AbstractController
         );
     }
 
-    //? D //
+    //? Delete //
     /**
      * @Route ("/delete/{id}",name ="article_delete")
      * @IsGranted("ROLE_USER")
@@ -285,7 +285,7 @@ class ArticleController extends AbstractController
     }
 
     //** COMMENT */
-    //* U *//
+    //* Update *//
     /**
      * @Route ("/update/comment/{id}",name ="comment_update")
      * @IsGranted("ROLE_USER")
@@ -326,7 +326,7 @@ class ArticleController extends AbstractController
         );
     }
 
-    //* D *//
+    //* Delete *//
     /**
      * @Route ("/delete/comment/{id}",name ="comment_delete")
      * @IsGranted("ROLE_USER")

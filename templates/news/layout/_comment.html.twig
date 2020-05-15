@@ -1,11 +1,11 @@
 <!-- Start Comment -->
 <div class="bloc-comment">
-	<h1>Commentaires
-		<i class="far fa-comments"></i>
-	</h1>
+	<h1>Commentaires<i class="far fa-comments"></i></h1>
+
 	{% if comments is empty %}
 		<p class="bottom-link">Il n'y a pas encore de commentaires sur cet article</p>
 	{% endif %}
+	
 	{% for comment in comments %}
 		<div class="solo-comment">
 			<div class="user-info">

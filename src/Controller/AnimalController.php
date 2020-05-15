@@ -26,7 +26,7 @@ class AnimalController extends AbstractController
     }
 
     // !CRUD !//
-    //? C //
+    //? Create //
     /**
      * @Route("/create", name="animal_create")
      */
@@ -86,7 +86,7 @@ class AnimalController extends AbstractController
         );
     }
 
-    //? R //
+    //? Read //
     /**
      * @Route("/{id}/view", name="animal_view")
      */
@@ -100,7 +100,7 @@ class AnimalController extends AbstractController
         );
     }
 
-    //? U //
+    //? Update //
     /**
      * @Route ("/updade/{id}",name ="animal_update")
      * @IsGranted("ROLE_USER")
@@ -147,12 +147,12 @@ class AnimalController extends AbstractController
         );
     }
 
-    //? D //
+    //? Delete //
     /**
      * @Route ("/delete/{id}",name ="animal_delete")
      * @IsGranted("ROLE_USER")
      */
-    public function deleteArticle(Animal $animal)
+    public function deleteAnimal(Animal $animal)
     {
         $this->denyAccessUnlessGranted('delete', $animal);
 

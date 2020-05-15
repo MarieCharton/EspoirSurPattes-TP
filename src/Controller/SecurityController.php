@@ -86,12 +86,4 @@ class SecurityController extends AbstractController
         );
     }
 
-    /**
-     * @Route("/admin", name="admin")
-     * @IsGranted("ROLE_ADMIN")
-     */
-    public function admin()
-    {
-        return $this->render("/admin/admin.html.twig");
-    }
 }

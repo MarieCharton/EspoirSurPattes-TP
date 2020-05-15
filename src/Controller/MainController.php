@@ -42,9 +42,6 @@ class MainController extends AbstractController
     {
         $authors = $userRepository ->findAuthors();
 
-        // $users = $userRepository->findAll();
-        // $users->getArticles();
-
         $categories = $categoryRepository->findAll();
 
         $articles = $paginator->paginate(
@@ -64,7 +61,7 @@ class MainController extends AbstractController
     /**
      * @Route("/map", name="map")
      */
-    public function mapPage(RegionRepository $regionRepository,Request $request,$_route)
+    public function mapPage(RegionRepository $regionRepository)
     {
         $regions = $regionRepository->findAll();
 

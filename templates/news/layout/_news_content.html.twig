@@ -13,7 +13,7 @@
 {% endif %}
 
 		<div class="filter-btn">
-		<p><i class="fas fa-sort"></i>Filtrer par</p>
+			<p><i class="fas fa-sort"></i>Filtrer par</p>
 			<div class="dropdown">
         		<button class="dropbtn">Date <i class="fas fa-caret-down"></i> </button>
 				<div class="dropdown-content">
@@ -73,6 +73,8 @@
 			</div>
 		</div>
 	{% endfor %}
-	{{ knp_pagination_render(articles) }}
+	
+{# Pagination #}
+{{ knp_pagination_render(articles) }}
 </div>
 	{# End Article Content  #}

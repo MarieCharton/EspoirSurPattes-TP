@@ -6,16 +6,12 @@
         <div class="banner-btn">
             {% if app.user == false %}
             <a href="{{ path('create_account') }}">
-                <button class="btn" type="button">
-                    S'inscrire pour publier
-                </button>
+                <button class="btn" type="button">S'inscrire pour publier</button>
             </a>
             {% endif %}
             {% if app.user %}
             <a href="{{ path('article_create') }}">
-                <button class="btn" type="button">
-                    Publier une news
-                </button>
+                <button class="btn" type="button">Publier une news</button>
             </a>
             {% endif %}
         </div>

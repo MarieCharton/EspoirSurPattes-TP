@@ -6,16 +6,13 @@
         <div class="banner-btn">
             {% if app.user == false %}
             <a href="{{ path('create_account') }}">
-                <button class="btn" type="button">
-                    S'inscrire pour faire un signalement
-                </button>
+                <button class="btn" type="button">S'inscrire pour faire un signalement</button>
             </a>
             {% endif %}
+
             {% if app.user %}
             <a href="{{ path('animal_create') }}">
-                <button class="btn" type="button">
-                    Faire un signalement
-                </button>
+                <button class="btn" type="button">Faire un signalement</button>
             </a>
             {% endif %}
         </div>

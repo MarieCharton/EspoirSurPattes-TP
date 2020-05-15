@@ -4,7 +4,7 @@
         <h1> <i class="far fa-bookmark"></i> Les articles par catégorie</h1>
     </div>
     <div class=" polaroids owl-carousel">
-    {% for category in categories %}
+        {% for category in categories %}
         <div class="card ">
             <div class="card-picture">
                 <img src="{{ asset("images/categories/" ~ category.name ~ ".jpg") }}" alt="{{ category.name}}">
@@ -14,7 +14,7 @@
                 <button class="card-button wobble-bottom"><a href="{{ path("articles__by_category",{id: category.id}) }}">Voir tout les articles</a></button>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 </div>
 {# EndArticle By Category Section #}

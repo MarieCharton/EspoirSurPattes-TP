@@ -13,19 +13,15 @@
             <div class="card-picture">
                 <img src="{{ asset('uploads/' ~ animalByDepartment.image) }}">
             </div>
-            <p>{{ animalByDepartment.type.name|capitalize }}
-					{{ animalByDepartment.status }}
-					à
-					{{ animalByDepartment.city|capitalize}}</p>
-            <p><i class="far fa-calendar-check"></i>
-					Le
-					{{ animalByDepartment.createdAt.date|date("d/m/Y") }}</p>
-                <button class"card-button">
-					<a href="{{path("animal_view",{id : animalByDepartment.id})}}">En savoir plus</a>
-				</button>
+            <p>{{ animalByDepartment.type.name|capitalize }}{{ animalByDepartment.status }}à{{ animalByDepartment.city|capitalize}}</p>
+            <p><i class="far fa-calendar-check"></i>Le{{ animalByDepartment.createdAt.date|date("d/m/Y") }}</p>
+            <button class"card-button">
+                <a href="{{path("animal_view",{id : animalByDepartment.id})}}">En savoir plus</a>
+            </button>
         </div>
     {% endfor %}
     </div>
+{# Pagination #}
 {{ knp_pagination_render(animalsByDepartment) }}
 </div>
 </div>
