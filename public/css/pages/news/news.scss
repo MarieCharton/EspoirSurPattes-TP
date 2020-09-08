@@ -1,8 +1,10 @@
-/*=====PAGE NEWS====*/
+/*=====STYLE=====*/
+@import "../../basic-style/basic-style.scss";
 
+/*=====PAGE NEWS====*/
 .category-list{
   .card {
-    height: 450px;
+    height: 477px;
     overflow: hidden;
   }
   .card-picture{
@@ -181,8 +183,8 @@
       margin: auto;
 
       img{
-        // background-color: yellow;
-      width: 100%;
+      // background-color: yellow;
+      width: 150%;
       border-radius: 30px;
       -webkit-transition: all 0.5s ease;
       transition: all 0.5s ease;
@@ -210,32 +212,36 @@
   /******MOBILE******/
 
 @media (max-width:767px){
-.article-list{
-  text-align: center;
-  
-  .read-more{
-    margin: 17px auto 0px auto;
+  .article-list{
+    text-align: center;
+    
+    .read-more{
+      margin: 17px auto 0px auto;
+    }
   }
-}
-.header-article {
-  
-  font-size: 0.8em;
+  .header-article {
+    
+    font-size: 0.8em;
 
-}
-.article{
+  }
+  .article{
 
-  width:100%;
-  display: block;
+    width:100%;
+    display: block;
 
-  .detail {
-      margin:auto;
+    .detail {
+        margin:auto;
+        width: 100%;
+    }
+    .img-mini{
       width: 100%;
+      margin: auto;
+      img{
+        width: 90%;
+      }
+    }
   }
-  .img-mini{
-    width: 100%;
-    margin: auto;
-  }
-}
+
 }
 @media (min-width:768px)and (max-width:1280px){
   .article-list{

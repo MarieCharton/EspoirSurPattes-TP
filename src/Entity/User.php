@@ -69,7 +69,6 @@ class User implements UserInterface
     private $updatedAt;
 
     //?RELATIONS
-
     /**
      * @ORM\OneToMany(targetEntity="Animal", mappedBy="user")
      */

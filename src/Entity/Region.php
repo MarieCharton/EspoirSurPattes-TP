@@ -23,7 +23,6 @@ class Region
     private $name;
 
      //?RELATIONS
-
         /**
      * @ORM\OneToMany(targetEntity="Animal", mappedBy="region")
      */

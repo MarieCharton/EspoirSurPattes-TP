@@ -22,7 +22,7 @@ class Category
      */
     private $name;
 
-
+     //?RELATIONS
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="categories")
      */

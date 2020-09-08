@@ -11,8 +11,8 @@
 				<div class="card-picture">
 					<img src="{{ asset('uploads/' ~ article.image) }}" alt=""/>
 				</div>
-				<p>{{ article.title|capitalize }}</p>
-				<p>{{ article.content |slice(0, 70) }} ... </p>
+				<h2>{{ article.title|capitalize }}</h2>
+				<p> Par <i class="far fa-user"></i> {{ article.user.username }} </p>
 				<button class"card-button">
 					<a href="{{path("article_view",{slug : article.slug})}}">Lire l'article</a>
 				</button>

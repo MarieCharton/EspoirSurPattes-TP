@@ -31,7 +31,7 @@ class Comment
      */
     private $updatedAt;
 
-
+     //?RELATIONS
     /**
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="comments")
      */

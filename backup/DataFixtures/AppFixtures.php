@@ -195,77 +195,57 @@ class AppFixtures extends Fixture
                         $types[] = $type; 
                 }
 
-                
-
-                
-                
-
-
                 // Création d'Utilisateurs
-                // for ($i = 1; $i <= 10; $i++) {
-                //         $user = new User();
-                //         $user->setFirstName($faker->firstName)
-                //              ->setLastName($faker->lastName)
-                //              ->setUsername(ucfirst($faker->word()))
-                //              ->setEmail($faker->email)
-                //              ->setCreatedAt($faker->dateTime)
-                //              ->setBirthdate($faker->dateTime)
-                //              ->setPassword($faker->word)
-                //              ->setGender($faker->randomElement(['male', 'femelle']))
-                //              ->setAdress($faker->address)
-                //              ->setRoles(["ROLE_USER"]);
+                for ($i = 1; $i <= 10; $i++) {
+                        $user = new User();
+                        $user->setUsername(ucfirst($faker->word()))
+                             ->setEmail($faker->email)
+                             ->setCreatedAt($faker->dateTime)
+                             ->setPassword($faker->word)
+                             ->setRoles(["ROLE_USER"]);
                         
-                //         // Hash du MDP avec Encoder
-                //         $plainPassword = $faker->word;
-                //         $encodedPassword = $this->passwordEncoder->encodePassword($user, $plainPassword);
-                //         $user->setPassword($encodedPassword);
-                //         $manager->persist($user);
-                //         $users[] = $user;
+                        // Hash du MDP avec Encoder
+                        $plainPassword = $faker->word;
+                        $encodedPassword = $this->passwordEncoder->encodePassword($user, $plainPassword);
+                        $user->setPassword($encodedPassword);
+                        $manager->persist($user);
+                        $users[] = $user;
                         
-                //         //Création d'articles aléatoires
-                //         for ($j = 1; $j <= mt_rand(3, 6); $j++) {
+                        //Création d'articles aléatoires
+                        for ($j = 1; $j <= mt_rand(3, 6); $j++) {
                           
                                 
-                //                 // Creation d'un Média pour chaque Article
-                //                 $article = new Article();
-                //                 $media = new Media();
-                //                 $media->setImgLink("article" . mt_rand(1, 5) . ".jpg");
-                //                 $manager->persist($media);
+                                // Creation d'un Média pour chaque Article
+                                $article = new Article();
+        
 
-                //                 // Attribution de Catégorie pour Chaque Article
-                //                 shuffle($categories);
-                //                 for($l = 1; $l <= mt_rand(1, 4); $l++) {
-                //                         $article->addCategory($categories[$l]);
-                //                 }
-
-                //                 $article->setTitle($faker->words(5, true))
-                //                         ->setSlug($this->slugger->slugify($article->getTitle()))
-                //                         ->setContent('Bear claw croissant lemon drops toffee chocolate. Jelly-o cheesecake cake. I love sweet icing jelly-o biscuit bonbon chocolate pastry lemon drops. Sesame snaps I love marshmallow marzipan apple pie bonbon. Cake macaroon biscuit I love carrot cake jelly beans I love I love jujubes. I love oat cake marzipan I love tart I love I love jujubes. Gummies halvah lollipop cake dessert marshmallow topping brownie ice cream.
-                //                         Gummi bears candy I love soufflé wafer pie. Cotton candy pastry jelly-o jujubes apple pie halvah ice cream bear claw toffee. Lollipop caramels gummies cookie chupa chups tart danish powder powder. Tootsie roll cookie pudding gummies tart. Tootsie roll I love sugar plum gummi bears pastry pie chocolate bar sesame snaps. Chocolate cake I love tiramisu I love brownie gummi bears. I love sweet cake candy carrot cake cake sweet I love. Chupa chups jelly cake cake toffee halvah chocolate bar I love.
+                                $article->setTitle($faker->words(5, true))
+                                        ->setSlug($this->slugger->slugify($article->getTitle()))
+                                        ->setContent('Bear claw croissant lemon drops toffee chocolate. Jelly-o cheesecake cake. I love sweet icing jelly-o biscuit bonbon chocolate pastry lemon drops. Sesame snaps I love marshmallow marzipan apple pie bonbon. Cake macaroon biscuit I love carrot cake jelly beans I love I love jujubes. I love oat cake marzipan I love tart I love I love jujubes. Gummies halvah lollipop cake dessert marshmallow topping brownie ice cream.
+                                        Gummi bears candy I love soufflé wafer pie. Cotton candy pastry jelly-o jujubes apple pie halvah ice cream bear claw toffee. Lollipop caramels gummies cookie chupa chups tart danish powder powder. Tootsie roll cookie pudding gummies tart. Tootsie roll I love sugar plum gummi bears pastry pie chocolate bar sesame snaps. Chocolate cake I love tiramisu I love brownie gummi bears. I love sweet cake candy carrot cake cake sweet I love. Chupa chups jelly cake cake toffee halvah chocolate bar I love.
                                         
-                //                         Croissant halvah I love danish candy canes cake. I love pastry croissant wafer oat cake. Biscuit cupcake oat cake. Jelly-o pudding oat cake dragée croissant sugar plum cheesecake. Pudding jujubes danish chocolate bar cotton candy I love. Soufflé gummi bears I love candy canes. Apple pie croissant icing gummies gummies candy canes dessert bear claw bonbon. Chocolate cake I love sweet roll chocolate bar cupcake I love lollipop cotton candy cupcake. Marzipan I love tootsie roll sweet. Ice cream tiramisu dessert I love lemon drops marzipan chocolate cake.')
-                //                         ->setUser($user)
-                //                         ->setCreatedAt($faker->dateTime)
-                //                         ->setMedia($media);
-                //                 $manager->persist($article);
-                //                 $articles[] = $article;
-                //         }
+                                        Croissant halvah I love danish candy canes cake. I love pastry croissant wafer oat cake. Biscuit cupcake oat cake. Jelly-o pudding oat cake dragée croissant sugar plum cheesecake. Pudding jujubes danish chocolate bar cotton candy I love. Soufflé gummi bears I love candy canes. Apple pie croissant icing gummies gummies candy canes dessert bear claw bonbon. Chocolate cake I love sweet roll chocolate bar cupcake I love lollipop cotton candy cupcake. Marzipan I love tootsie roll sweet. Ice cream tiramisu dessert I love lemon drops marzipan chocolate cake.')
+                                        ->setUser($user)
+                                        ->setCreatedAt($faker->dateTime);
+                                $manager->persist($article);
+                                $articles[] = $article;
+                        }
 
-                // }
+                }
 
                 // Create some comments
-                // foreach($articles as $article) {
+                foreach($articles as $article) {
 
-                //         for($c = 1; $c <= mt_rand(5, 9); $c++) {
+                        for($c = 1; $c <= mt_rand(5, 9); $c++) {
                                 
-                //                 $comment = new Comment();
-                //                 $comment->setContent($faker->text)
-                //                         ->setArticle($article)
-                //                         ->setUser($faker->randomElement($users))
-                //                         ->setCreatedAt($faker->dateTime);
-                //                 $manager->persist($comment);
-                //         }
-                // }
+                                $comment = new Comment();
+                                $comment->setContent($faker->text)
+                                        ->setArticle($article)
+                                        ->setUser($faker->randomElement($users))
+                                        ->setCreatedAt($faker->dateTime);
+                                $manager->persist($comment);
+                        }
+                }
 
                 // Creations des Régions en Base de Données
                 foreach($regionLabels as $regionLabel => $departmentLabels) {
@@ -282,27 +262,27 @@ class AppFixtures extends Fixture
                                 $manager->persist($department);
                                 $departments[] = $department;
 
-                                // // Création d'Animaux Aléatoires pour chaque Département
-                                // for ($i = 1; $i <= mt_rand(5, 7); $i++) {
-                                //         $animal = new Animal();
-                                //         $animal->setName(ucfirst($faker->word()))
-                                //                 ->setStatus($faker->randomElement(['perdu', 'trouvé', 'adoption']))
-                                //                 ->setAge((mt_rand(2, 7)))
-                                //                 ->setIdentification($faker->randomElement(['Tatoué', 'Identifié', 'Non renseigné']))
-                                //                 ->setDescription('Gummi bears macaroon tart liquorice pudding gummi bears I love fruitcake. Marzipan cake lollipop toffee topping. Gummies cotton candy cookie cookie candy canes. I love donut tiramisu. Chupa chups sesame snaps ice cream I love. Cheesecake candy tart tart gummies tiramisu cheesecake. Marzipan donut I love jelly beans marshmallow tiramisu donut. Candy canes macaroon biscuit.')
-                                //                 ->setSex(($faker->randomElement(['Male', 'Femelle'])))
-                                //                 ->setArea($faker->word)
-                                //                 ->setCity($faker->city)
-                                //                 ->setType($faker->randomElement($types))
-                                //                 ->setImage($animal->getType() . mt_rand(1, 5) . '.jpg')
-                                //                 // ->setImage($faker->randomElement($types)->getName() . mt_rand(1, 5) . '.jpg')
-                                //                 ->setCreatedAt($faker->dateTime)
-                                //                 ->setUser($faker->randomElement($users))
-                                //                 ->setRegion($region)
-                                //                 ->setDepartment($department);
+                                // Création d'Animaux Aléatoires pour chaque Département
+                                for ($i = 1; $i <= mt_rand(5, 7); $i++) {
+                                        $animal = new Animal();
+                                        $animal->setName(ucfirst($faker->word()))
+                                                ->setStatus($faker->randomElement(['perdu', 'trouvé', 'adoption']))
+                                                ->setAge((mt_rand(2, 7)))
+                                                ->setIdentification($faker->randomElement(['Tatoué', 'Identifié', 'Non renseigné']))
+                                                ->setDescription('Gummi bears macaroon tart liquorice pudding gummi bears I love fruitcake. Marzipan cake lollipop toffee topping. Gummies cotton candy cookie cookie candy canes. I love donut tiramisu. Chupa chups sesame snaps ice cream I love. Cheesecake candy tart tart gummies tiramisu cheesecake. Marzipan donut I love jelly beans marshmallow tiramisu donut. Candy canes macaroon biscuit.')
+                                                ->setSex(($faker->randomElement(['Male', 'Femelle'])))
+                                                ->setArea($faker->word)
+                                                ->setCity($faker->city)
+                                                ->setType($faker->randomElement($types))
+                                                ->setImage($animal->getType() . mt_rand(1, 5) . '.jpg')
+                                                // ->setImage($faker->randomElement($types)->getName() . mt_rand(1, 5) . '.jpg')
+                                                ->setCreatedAt($faker->dateTime)
+                                                ->setUser($faker->randomElement($users))
+                                                ->setRegion($region)
+                                                ->setDepartment($department);
 
-                                //         $manager->persist($animal);
-                                // }
+                                        $manager->persist($animal);
+                                }
                                 
                         }
                 }

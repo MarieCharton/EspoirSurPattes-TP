@@ -222,8 +222,14 @@
         h1{
             font-size: 1.5em;
         }
+        .top-article{
+            h1{
+                font-size: 1.5em;
+            }
+        }
         .article-content{
             padding: 8px;
+            font-size: 1em;
         }
         img{
             float: none;
@@ -234,6 +240,15 @@
             width:100%;
     
         }
+    }
+    .solo-comment{
+                .bloc-content{
+                    .comment-content{
+                        p{
+                            font-size: 1em;
+                        }
+                    }
+                }
     }
 
 /*Lightbox */

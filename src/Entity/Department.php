@@ -22,6 +22,7 @@ class Department
      */
     private $name;
 
+    //?RELATIONS
     /**
      * @ORM\OneToMany(targetEntity="Animal", mappedBy="department")
      */

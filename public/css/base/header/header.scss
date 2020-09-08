@@ -18,6 +18,7 @@
     a{
         color:$green;
         transition:800ms ease all;
+        font-size: 1.2em;
         &:hover{
             color:white;
             cursor: pointer;
@@ -25,13 +26,13 @@
     }
 
     .links{
-        font-size: 1.6em;
+        font-size: 1.5em;
         li{
             padding-right: 50px;
         }
     }
     .login{
-        font-size: 1.2em;
+        font-size: 1em;
         text-align: center;
         a{
             color: white;

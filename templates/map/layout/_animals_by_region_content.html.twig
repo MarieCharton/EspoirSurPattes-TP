@@ -21,8 +21,8 @@
             <div class="card-picture">
                 <img src="{{ asset('uploads/' ~ animalByRegion.image) }}">
             </div>
-            <p>{{ animalByRegion.type.name|capitalize }}{{ animalByRegion.status }}à{{ animalByRegion.city|capitalize}} ({{animalByRegion.department.name}})</p>
-            <p><i class="far fa-calendar-check"></i>Le{{ animalByRegion.createdAt.date|date("d/m/Y") }}</p>
+            <p>{{ animalByRegion.type.name|capitalize }} {{ animalByRegion.status }} à {{ animalByRegion.city|capitalize}} ({{animalByRegion.department.name}})</p>
+            <p><i class="far fa-calendar-check"></i> Le {{ animalByRegion.createdAt.date|date("d/m/Y") }}</p>
             <button class"card-button">
                 <a href="{{path("animal_view",{id : animalByRegion.id})}}">En savoir plus</a>
             </button>

@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Article;
 use Doctrine\ORM\Query;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 
 
@@ -33,7 +33,7 @@ class ArticleRepository extends ServiceEntityRepository
     /**
      * @return Query
      */
-    public function findAllArticlesByDate(): Query
+    public function findAllNewArticles(): Query
     {
         $entityManager = $this->getEntityManager();
 
@@ -41,6 +41,22 @@ class ArticleRepository extends ServiceEntityRepository
             SELECT article  
             FROM App\Entity\Article article 
             ORDER BY article.createdAt DESC 
+            ");
+
+        return $query;
+    }
+
+        /**
+     * @return Query
+     */
+    public function findAllOldArticles(): Query
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery("
+            SELECT article  
+            FROM App\Entity\Article article 
+            ORDER BY article.createdAt ASC 
             ");
 
         return $query;
@@ -62,4 +78,5 @@ class ArticleRepository extends ServiceEntityRepository
         ");
         return $query;
     }
+
 }

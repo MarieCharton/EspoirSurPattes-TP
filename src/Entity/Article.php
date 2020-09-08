@@ -59,17 +59,12 @@ class Article
     private $updatedAt;
 
 
-    //!RELATIONS
+    //?RELATIONS
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="articles")
      */
     private $user;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Counter", inversedBy="articles",cascade={"persist"})
-     */
-    private $likeCounter;
 
 
     /**
@@ -82,10 +77,6 @@ class Article
      */
     private $categories;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="votes")
-     */
-    private $userVotes;
 
 
 
@@ -93,7 +84,6 @@ class Article
     {
         $this->categories = new ArrayCollection();
         $this->comments = new ArrayCollection();
-        $this->userVotes = new ArrayCollection();
         $this->createdAt = new \DateTime();
     }
 
@@ -242,44 +232,4 @@ class Article
         return $this;
     }
 
-
-    /**
-     * Get the value of likeCounter
-     */ 
-    public function getLikeCounter()
-    {
-        return $this->likeCounter;
-    }
-
-    /**
-     * Set the value of likeCounter
-     *
-     * @return  self
-     */ 
-    public function setLikeCounter($likeCounter)
-    {
-        $this->likeCounter = $likeCounter;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of userVotes
-     */ 
-    public function getUserVotes()
-    {
-        return $this->userVotes;
-    }
-
-    /**
-     * Set the value of userVotes
-     *
-     * @return  self
-     */ 
-    public function setUserVotes($userVotes)
-    {
-        $this->userVotes = $userVotes;
-
-        return $this;
-    }
 }

@@ -44,8 +44,8 @@ class MainController extends AbstractController
 
         $categories = $categoryRepository->findAll();
 
-        $articles = $paginator->paginate(
-            $articleRepository->findAllArticlesByDate(),
+        $new_articles = $paginator->paginate(
+            $articleRepository->findAllNewArticles(),
             $request->query->getInt('page', 1),
             4
         );
@@ -53,7 +53,30 @@ class MainController extends AbstractController
 
         return $this->render('news/news.html.twig', [
             "categories" => $categories,
-            "articles" => $articles,
+            "new_articles" => $new_articles,
+            "authors" => $authors
+        ]);
+    }
+
+        /**
+     * @Route("/news/old-articles", name="news-old-articles")
+     */
+    public function newsPageOldArticles(CategoryRepository $categoryRepository, ArticleRepository $articleRepository, PaginatorInterface $paginator, Request $request,UserRepository $userRepository)
+    {
+        $authors = $userRepository ->findAuthors();
+
+        $categories = $categoryRepository->findAll();
+
+        $old_articles = $paginator->paginate(
+            $articleRepository->findAllOldArticles(),
+            $request->query->getInt('page', 1),
+            4
+        );
+
+
+        return $this->render('news/news.html.twig', [
+            "categories" => $categories,
+            "old_articles" => $old_articles,
             "authors" => $authors
         ]);
     }

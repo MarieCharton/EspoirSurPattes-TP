@@ -22,7 +22,7 @@ class Type
      */
     private $name;
 
-
+     //?RELATIONS
     /**
      * @ORM\OneToMany(targetEntity="Animal", mappedBy="type")
      */

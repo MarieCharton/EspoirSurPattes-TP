@@ -21,6 +21,7 @@
     }
     .banner-content{
         background-color:$green;
+        color: $darkergrey;
         padding: 20px;
         border-radius: 20px;
         text-align: center;
@@ -101,14 +102,14 @@
 .banner-map{
     @extend .banner;
     /*Banner 1*/
-    // background-image: url("../images/banner/map.jpg");
-    // background-size: 115%;
-    // background-position: 100% 18%;
+    background-image: url("../images/banner/map.jpg");
+    background-size: 115%;
+    background-position: 100% 18%;
     /*Banner 2*/
-    background-image: url("../images/banner/map2.jpg");
-    background-size: 60%;
-    background-position: 0% 28%;
-    background-color: #f5f7f8;
+    // background-image: url("../images/banner/map2.jpg");
+    // background-size: 60%;
+    // background-position: 0% 28%;
+    // background-color: #f5f7f8;
     /*Banner 3*/
     // background-image: url("../images/banner/map3.jpg");
     // background-size: 100%;
@@ -150,6 +151,7 @@
             padding: 0px;
             height: 45%;
             width:90%;
+            margin: 290px auto 60px auto;
         }
     
     
@@ -163,9 +165,10 @@
     }
     .banner-homepage{
         background-size: 95%;
+        background-position: 15% -20%;
     }
     .banner-map{
-        background-size: 100%;
+        background-size: 144%;
         background-position: 0% -75%;
         .banner-content{
             height: 30%;
@@ -176,8 +179,8 @@
     }
 
     .banner-news{
-        background-size: 142%;
-        background-position: 100% 475%;
+        background-size: 100%;
+        background-position: 0% 100%;
         background-color: #2a1d24;
         .banner-content{
             height: 30%;

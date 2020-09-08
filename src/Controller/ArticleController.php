@@ -5,11 +5,9 @@ namespace App\Controller;
 use DateTime;
 use App\Entity\Article;
 use App\Entity\Comment;
-use App\Entity\Counter;
 use App\Entity\Category;
 use App\Form\ArticleType;
 use App\Form\CommentType;
-use App\Form\CounterType;
 use App\Services\Slugger;
 use App\Services\ImageUploader;
 use Symfony\Component\Mime\Email;
@@ -43,14 +41,14 @@ class ArticleController extends AbstractController
 
 
 
-        $articles = $paginator->paginate(
+        $new_articles = $paginator->paginate(
             $articleRepository->findArticlesByCategory($categoryId),
             $request->query->getInt('page', 1),
             4
         );
 
         return $this->render("news/articles_by_category.html.twig", [
-            "articles" => $articles,
+            "new_articles" => $new_articles,
             "category" => $category,
         ]);
     }
@@ -92,11 +90,6 @@ class ArticleController extends AbstractController
             $slug = $slugger->slugify($article->getTitle());
             $article->setSlug($slug);
 
-            //create Counter 
-            $counter = new Counter;
-            $counter->setNumberOfLike(0);
-            $article ->setLikeCounter($counter);
-
 
             //Set the date automatically
             $article->setCreatedAt(new DateTime());
@@ -129,25 +122,6 @@ class ArticleController extends AbstractController
 
         $slug = $article->getSlug();
         $comments = $article->getComments();
-
-        $counter = $article->getLikeCounter();
-        
-        $formCounter = $this->createForm(CounterType::class, $counter);
-        $formCounter->handleRequest($request);
-        
-        if ($formCounter->isSubmitted() && $formCounter->isValid()) {
-            
-            $numberOfLikes = $counter->getNumberOfLike();
-            $numberOfLikes =  $numberOfLikes + 1 ; 
-            $counter ->setNumberOfLike($numberOfLikes);
-
-            $manager = $this->getDoctrine()->getManager();
-
-            $manager->flush();
-            $this->addFlash('success', "Merci pour votre vote");
-
-        }
-        
         
 
         //* C *//
@@ -181,8 +155,7 @@ class ArticleController extends AbstractController
             [
                 "article" => $article,
                 "comments" => $comments,
-                "formComment" => $formComment->createView(),
-                "formCounter" => $formCounter->createView()
+                "formComment" => $formComment->createView()
             ]
         );
     }
